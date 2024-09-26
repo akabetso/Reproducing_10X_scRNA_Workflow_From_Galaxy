@@ -1,0 +1,16 @@
+	STAR --runMode genomeGenerate --runThreadN 4 --genomeDir ../results/index --genomeFastaFiles ../data/ref_genome/Homo_sapiens.GRCh38.dna.primary_assembly.fa --sjdbGTFfile ../data/ref_genome/Homo_sapiens.GRCh38.112.gtf --genomeSAsparseD 3 --genomeSAindexNbases 12
+	STAR version: 2.7.11b   compiled: 2024-09-22T10:08:13+02:00 :/home/akabetso/STAR-2.7.11b/source
+Sep 24 13:23:34 ..... started STAR run
+Sep 24 13:23:34 ... starting to generate Genome files
+Sep 24 13:24:20 ..... processing annotations GTF
+Sep 24 13:24:42 ... starting to sort Suffix Array. This may take a long time...
+Sep 24 13:24:48 ... sorting Suffix Array chunks and saving them to disk...
+Sep 24 14:25:33 ... loading chunks from disk, packing SA...
+Sep 24 14:27:42 ... finished generating suffix array
+Sep 24 14:27:42 ... generating Suffix Array index
+Sep 24 14:29:53 ... completed Suffix Array index
+Sep 24 14:29:54 ..... inserting junctions into the genome indices
+Sep 24 14:41:09 ... writing Genome to disk ...
+Sep 24 14:42:06 ... writing Suffix Array to disk ...
+Sep 24 14:43:11 ... writing SAindex to disk
+Sep 24 14:43:14 ..... finished successfully

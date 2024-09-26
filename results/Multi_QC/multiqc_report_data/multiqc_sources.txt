@@ -1,0 +1,2 @@
+Module	Section	Sample Name	Source
+STAR	SummaryLog	STARsolo	/home/akabetso/Desktop/Transcriptome/scRNA_Galaxy/scripts/STARsolo_Log.final.out

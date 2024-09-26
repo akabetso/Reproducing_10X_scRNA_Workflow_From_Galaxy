@@ -1,0 +1,2 @@
+Sample	Uniquely mapped	Mapped to multiple loci	Mapped to too many loci	Unmapped: too short	Unmapped: other
+STARsolo	6801633	596795	23235	245057	19205

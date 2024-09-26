@@ -1,0 +1,3016 @@
+{
+    "report_data_sources": {
+        "STAR": {
+            "SummaryLog": {
+                "STARsolo": "/home/akabetso/Desktop/Transcriptome/scRNA_Galaxy/scripts/STARsolo_Log.final.out"
+            }
+        }
+    },
+    "report_general_stats_data": [
+        {
+            "STARsolo": {
+                "total_reads": 7685925.0,
+                "avg_input_read_length": 91.0,
+                "uniquely_mapped": 6801633.0,
+                "uniquely_mapped_percent": 88.49,
+                "avg_mapped_read_length": 89.31,
+                "num_splices": 1081061.0,
+                "num_annotated_splices": 1059654.0,
+                "num_GTAG_splices": 1069827.0,
+                "num_GCAG_splices": 3208.0,
+                "num_ATAC_splices": 172.0,
+                "num_noncanonical_splices": 7854.0,
+                "mismatch_rate": 0.47,
+                "deletion_rate": 0.01,
+                "deletion_length": 1.55,
+                "insertion_rate": 0.02,
+                "insertion_length": 1.38,
+                "multimapped": 596795.0,
+                "multimapped_percent": 7.76,
+                "multimapped_toomany": 23235.0,
+                "multimapped_toomany_percent": 0.3,
+                "unmapped_mismatches_percent": 0.0,
+                "unmapped_tooshort_percent": 3.19,
+                "unmapped_other_percent": 0.25,
+                "unmapped_mismatches": 0,
+                "unmapped_tooshort": 245057,
+                "unmapped_other": 19205,
+                "mapped_percent": 96.25,
+                "mapped": 7398428.0
+            }
+        }
+    ],
+    "report_general_stats_headers": [
+        {
+            "total_reads": {
+                "title": "Total Reads",
+                "description": "Number of input reads",
+                "scale": "Blues",
+                "shared_key": "read_count",
+                "hidden": true,
+                "namespace": "STAR",
+                "rid": "mqc_generalstats_star_total_reads_1",
+                "modify": null,
+                "suffix": " M",
+                "format": null,
+                "color": "55,126,184",
+                "max": null,
+                "min": null,
+                "ceiling": null,
+                "floor": null,
+                "minrange": null,
+                "placement": 1000.0,
+                "dmax": 7.685924999999999,
+                "dmin": 0
+            },
+            "mapped": {
+                "title": "Aligned",
+                "description": "Mapped reads",
+                "scale": "PuRd",
+                "shared_key": "read_count",
+                "hidden": true,
+                "namespace": "STAR",
+                "rid": "mqc_generalstats_star_mapped_1",
+                "modify": null,
+                "suffix": " M",
+                "format": null,
+                "color": "55,126,184",
+                "max": null,
+                "min": null,
+                "ceiling": null,
+                "floor": null,
+                "minrange": null,
+                "placement": 1000.0,
+                "dmax": 7.685924999999999,
+                "dmin": 0
+            },
+            "mapped_percent": {
+                "title": "Aligned",
+                "description": "% Mapped reads",
+                "suffix": "%",
+                "scale": "PuRd",
+                "namespace": "STAR",
+                "rid": "mqc_generalstats_star_mapped_percent_1",
+                "format": null,
+                "color": "55,126,184",
+                "hidden": false,
+                "max": null,
+                "min": null,
+                "ceiling": null,
+                "floor": null,
+                "minrange": null,
+                "shared_key": null,
+                "modify": null,
+                "placement": 1000.0,
+                "dmax": 96.25,
+                "dmin": 0
+            },
+            "uniquely_mapped": {
+                "title": "Uniq aligned",
+                "description": "Uniquely mapped reads",
+                "scale": "YlGn",
+                "shared_key": "read_count",
+                "hidden": true,
+                "namespace": "STAR",
+                "rid": "mqc_generalstats_star_uniquely_mapped_1",
+                "modify": null,
+                "suffix": " M",
+                "format": null,
+                "color": "55,126,184",
+                "max": null,
+                "min": null,
+                "ceiling": null,
+                "floor": null,
+                "minrange": null,
+                "placement": 1000.0,
+                "dmax": 7.685924999999999,
+                "dmin": 0
+            },
+            "uniquely_mapped_percent": {
+                "title": "Uniq aligned",
+                "description": "% Uniquely mapped reads",
+                "suffix": "%",
+                "scale": "YlGn",
+                "namespace": "STAR",
+                "rid": "mqc_generalstats_star_uniquely_mapped_percent_1",
+                "format": null,
+                "color": "55,126,184",
+                "hidden": false,
+                "max": null,
+                "min": null,
+                "ceiling": null,
+                "floor": null,
+                "minrange": null,
+                "shared_key": null,
+                "modify": null,
+                "placement": 1000.0,
+                "dmax": 88.49,
+                "dmin": 0
+            },
+            "multimapped": {
+                "title": "Multimapped",
+                "description": "Multiple mapped reads",
+                "scale": "PuRd",
+                "shared_key": "read_count",
+                "hidden": true,
+                "namespace": "STAR",
+                "rid": "mqc_generalstats_star_multimapped_1",
+                "modify": null,
+                "suffix": " M",
+                "format": null,
+                "color": "55,126,184",
+                "max": null,
+                "min": null,
+                "ceiling": null,
+                "floor": null,
+                "minrange": null,
+                "placement": 1000.0,
+                "dmax": 7.685924999999999,
+                "dmin": 0
+            }
+        }
+    ],
+    "report_multiqc_command": "/home/akabetso/miniconda3/envs/myenv/bin/multiqc -n multiqc_report --module star --outdir ../results/Multi_QC STARsolo_Log.final.out STARsolo_Log.out STARsolo_Log.progress.out",
+    "report_plot_data": {
+        "star_summary_table": {
+            "id": "star_summary_table",
+            "plot_type": "violin",
+            "layout": {
+                "autosize": true,
+                "colorway": [
+                    "#7cb5ec",
+                    "#434348",
+                    "#90ed7d",
+                    "#f7a35c",
+                    "#8085e9",
+                    "#f15c80",
+                    "#e4d354",
+                    "#2b908f",
+                    "#f45b5b",
+                    "#91e8e1"
+                ],
+                "font": {
+                    "family": "'Lucida Grande', 'Open Sans', verdana, arial, sans-serif"
+                },
+                "height": 500,
+                "hoverlabel": {
+                    "namelength": -1
+                },
+                "margin": {
+                    "b": 40,
+                    "l": 60,
+                    "pad": 0,
+                    "r": 15,
+                    "t": 50
+                },
+                "modebar": {
+                    "activecolor": "rgba(0, 0, 0, 1)",
+                    "bgcolor": "rgba(0, 0, 0, 0)",
+                    "color": "rgba(0, 0, 0, 0.5)"
+                },
+                "paper_bgcolor": "white",
+                "plot_bgcolor": "white",
+                "showlegend": false,
+                "title": {
+                    "font": {
+                        "size": 20
+                    },
+                    "text": "STAR: Summary Statistics",
+                    "x": 0.5,
+                    "xanchor": "center"
+                },
+                "xaxis": {
+                    "automargin": false,
+                    "color": "rgba(0,0,0,0.3)",
+                    "gridcolor": "rgba(0,0,0,0.1)",
+                    "tickfont": {
+                        "color": "rgba(0,0,0,0.5)",
+                        "size": 9
+                    },
+                    "zerolinecolor": "rgba(0,0,0,0.1)"
+                },
+                "yaxis": {
+                    "automargin": true,
+                    "color": "rgba(0,0,0,0.3)",
+                    "gridcolor": "rgba(0,0,0,0.1)",
+                    "tickfont": {
+                        "color": "rgba(0,0,0,0.5)",
+                        "size": 9
+                    },
+                    "zerolinecolor": "rgba(0,0,0,0.1)"
+                },
+                "violingap": 0,
+                "grid": {
+                    "columns": 1,
+                    "roworder": "top to bottom",
+                    "ygap": 0.4
+                }
+            },
+            "datasets": [
+                {
+                    "plot_id": "star_summary_table",
+                    "label": "1",
+                    "uid": "star_summary_table",
+                    "dconfig": {
+                        "ylab": "",
+                        "title": "STAR: Summary Statistics"
+                    },
+                    "layout": {
+                        "title": {
+                            "text": "STAR: Summary Statistics"
+                        },
+                        "xaxis": {
+                            "hoverformat": null,
+                            "ticksuffix": "",
+                            "title": {
+                                "text": null
+                            },
+                            "rangemode": "normal",
+                            "autorangeoptions": {
+                                "clipmin": null,
+                                "clipmax": null,
+                                "minallowed": null,
+                                "maxallowed": null
+                            }
+                        },
+                        "yaxis": {
+                            "hoverformat": null,
+                            "ticksuffix": "",
+                            "title": {
+                                "text": ""
+                            },
+                            "rangemode": "normal",
+                            "autorangeoptions": {
+                                "clipmin": null,
+                                "clipmax": null,
+                                "minallowed": null,
+                                "maxallowed": null
+                            }
+                        }
+                    },
+                    "trace_params": {
+                        "hovertemplate": "<b>%{text}</b>: %{x}<extra></extra>",
+                        "orientation": "h",
+                        "box": {
+                            "visible": true
+                        },
+                        "meanline": {
+                            "visible": true
+                        },
+                        "fillcolor": "#b5b5b5",
+                        "line": {
+                            "width": 2,
+                            "color": "#b5b5b5"
+                        },
+                        "opacity": 0.5,
+                        "points": false,
+                        "hoveron": "points"
+                    },
+                    "pct_range": {
+                        "xaxis": {
+                            "min": 0,
+                            "max": 100
+                        },
+                        "yaxis": {
+                            "min": 0,
+                            "max": 100
+                        }
+                    },
+                    "n_samples": 1,
+                    "metrics": [
+                        "total_reads",
+                        "mapped",
+                        "mapped_percent",
+                        "uniquely_mapped",
+                        "uniquely_mapped_percent",
+                        "multimapped",
+                        "avg_input_read_length",
+                        "avg_mapped_read_length",
+                        "num_splices",
+                        "num_annotated_splices",
+                        "num_GTAG_splices",
+                        "num_GCAG_splices",
+                        "num_ATAC_splices",
+                        "num_noncanonical_splices",
+                        "mismatch_rate",
+                        "deletion_rate",
+                        "deletion_length",
+                        "insertion_rate",
+                        "insertion_length"
+                    ],
+                    "header_by_metric": {
+                        "total_reads": {
+                            "title": "Total Reads",
+                            "description": "Number of input reads",
+                            "suffix": " M",
+                            "dmin": 0.0,
+                            "dmax": 7.685924999999999,
+                            "hidden": false,
+                            "xaxis": {
+                                "ticksuffix": " M",
+                                "tickvals": null,
+                                "range": [
+                                    -0.038429624999999995,
+                                    7.724546773124999
+                                ]
+                            },
+                            "show_only_outliers": false,
+                            "show_points": true,
+                            "namespace": "STAR",
+                            "color": null,
+                            "hoverformat": ".2f"
+                        },
+                        "mapped": {
+                            "title": "Aligned",
+                            "description": "Mapped reads",
+                            "suffix": " M",
+                            "dmin": 0.0,
+                            "dmax": 7.685924999999999,
+                            "hidden": true,
+                            "xaxis": {
+                                "ticksuffix": " M",
+                                "tickvals": null,
+                                "range": [
+                                    -0.038429624999999995,
+                                    7.724546773124999
+                                ]
+                            },
+                            "show_only_outliers": false,
+                            "show_points": true,
+                            "namespace": "STAR",
+                            "color": null,
+                            "hoverformat": ".2f"
+                        },
+                        "mapped_percent": {
+                            "title": "Aligned",
+                            "description": "% Mapped reads",
+                            "suffix": "%",
+                            "dmin": 0.0,
+                            "dmax": 96.25,
+                            "hidden": false,
+                            "xaxis": {
+                                "ticksuffix": "%",
+                                "tickvals": null,
+                                "range": [
+                                    -0.48125,
+                                    96.73365625
+                                ]
+                            },
+                            "show_only_outliers": false,
+                            "show_points": true,
+                            "namespace": "STAR",
+                            "color": null,
+                            "hoverformat": ".2f"
+                        },
+                        "uniquely_mapped": {
+                            "title": "Uniq aligned",
+                            "description": "Uniquely mapped reads",
+                            "suffix": " M",
+                            "dmin": 0.0,
+                            "dmax": 7.685924999999999,
+                            "hidden": true,
+                            "xaxis": {
+                                "ticksuffix": " M",
+                                "tickvals": null,
+                                "range": [
+                                    -0.038429624999999995,
+                                    7.724546773124999
+                                ]
+                            },
+                            "show_only_outliers": false,
+                            "show_points": true,
+                            "namespace": "STAR",
+                            "color": null,
+                            "hoverformat": ".2f"
+                        },
+                        "uniquely_mapped_percent": {
+                            "title": "Uniq aligned",
+                            "description": "% Uniquely mapped reads",
+                            "suffix": "%",
+                            "dmin": 0.0,
+                            "dmax": 88.49,
+                            "hidden": false,
+                            "xaxis": {
+                                "ticksuffix": "%",
+                                "tickvals": null,
+                                "range": [
+                                    -0.44245,
+                                    88.93466224999999
+                                ]
+                            },
+                            "show_only_outliers": false,
+                            "show_points": true,
+                            "namespace": "STAR",
+                            "color": null,
+                            "hoverformat": ".2f"
+                        },
+                        "multimapped": {
+                            "title": "Multimapped",
+                            "description": "Multiple mapped reads",
+                            "suffix": " M",
+                            "dmin": 0.0,
+                            "dmax": 7.685924999999999,
+                            "hidden": true,
+                            "xaxis": {
+                                "ticksuffix": " M",
+                                "tickvals": null,
+                                "range": [
+                                    -0.038429624999999995,
+                                    7.724546773124999
+                                ]
+                            },
+                            "show_only_outliers": false,
+                            "show_points": true,
+                            "namespace": "STAR",
+                            "color": null,
+                            "hoverformat": ".2f"
+                        },
+                        "avg_input_read_length": {
+                            "title": "Avg. read len",
+                            "description": "Average input read length",
+                            "suffix": "bp",
+                            "dmin": 0.0,
+                            "dmax": 91.0,
+                            "hidden": true,
+                            "xaxis": {
+                                "ticksuffix": "bp",
+                                "tickvals": null,
+                                "range": [
+                                    -0.455,
+                                    91.457275
+                                ]
+                            },
+                            "show_only_outliers": false,
+                            "show_points": true,
+                            "namespace": "STAR",
+                            "color": null,
+                            "hoverformat": ".2f"
+                        },
+                        "avg_mapped_read_length": {
+                            "title": "Avg. mapped len",
+                            "description": "Average mapped length",
+                            "suffix": "bp",
+                            "dmin": 0.0,
+                            "dmax": 89.31,
+                            "hidden": false,
+                            "xaxis": {
+                                "ticksuffix": "bp",
+                                "tickvals": null,
+                                "range": [
+                                    -0.44655,
+                                    89.75878275000001
+                                ]
+                            },
+                            "show_only_outliers": false,
+                            "show_points": true,
+                            "namespace": "STAR",
+                            "color": null,
+                            "hoverformat": ".2f"
+                        },
+                        "num_splices": {
+                            "title": "Splices",
+                            "description": "Number of splices: Total",
+                            "suffix": " M",
+                            "dmin": 0.0,
+                            "dmax": 7.685924999999999,
+                            "hidden": true,
+                            "xaxis": {
+                                "ticksuffix": " M",
+                                "tickvals": null,
+                                "range": [
+                                    -0.038429624999999995,
+                                    7.724546773124999
+                                ]
+                            },
+                            "show_only_outliers": false,
+                            "show_points": true,
+                            "namespace": "STAR",
+                            "color": null,
+                            "hoverformat": ".2f"
+                        },
+                        "num_annotated_splices": {
+                            "title": "Annotated splices",
+                            "description": "Number of splices: Annotated (sjdb)",
+                            "suffix": " M",
+                            "dmin": 0.0,
+                            "dmax": 7.685924999999999,
+                            "hidden": false,
+                            "xaxis": {
+                                "ticksuffix": " M",
+                                "tickvals": null,
+                                "range": [
+                                    -0.038429624999999995,
+                                    7.724546773124999
+                                ]
+                            },
+                            "show_only_outliers": false,
+                            "show_points": true,
+                            "namespace": "STAR",
+                            "color": null,
+                            "hoverformat": ".2f"
+                        },
+                        "num_GTAG_splices": {
+                            "title": "GT/AG splices",
+                            "description": "Number of splices: GT/AG",
+                            "suffix": " M",
+                            "dmin": 0.0,
+                            "dmax": 7.685924999999999,
+                            "hidden": true,
+                            "xaxis": {
+                                "ticksuffix": " M",
+                                "tickvals": null,
+                                "range": [
+                                    -0.038429624999999995,
+                                    7.724546773124999
+                                ]
+                            },
+                            "show_only_outliers": false,
+                            "show_points": true,
+                            "namespace": "STAR",
+                            "color": null,
+                            "hoverformat": ".2f"
+                        },
+                        "num_GCAG_splices": {
+                            "title": "GC/AG splices",
+                            "description": "Number of splices: GC/AG",
+                            "suffix": " M",
+                            "dmin": 0.0,
+                            "dmax": 7.685924999999999,
+                            "hidden": true,
+                            "xaxis": {
+                                "ticksuffix": " M",
+                                "tickvals": null,
+                                "range": [
+                                    -0.038429624999999995,
+                                    7.724546773124999
+                                ]
+                            },
+                            "show_only_outliers": false,
+                            "show_points": true,
+                            "namespace": "STAR",
+                            "color": null,
+                            "hoverformat": ".2f"
+                        },
+                        "num_ATAC_splices": {
+                            "title": "AT/AC splices",
+                            "description": "Number of splices: AT/AC",
+                            "suffix": " M",
+                            "dmin": 0.0,
+                            "dmax": 7.685924999999999,
+                            "hidden": true,
+                            "xaxis": {
+                                "ticksuffix": " M",
+                                "tickvals": null,
+                                "range": [
+                                    -0.038429624999999995,
+                                    7.724546773124999
+                                ]
+                            },
+                            "show_only_outliers": false,
+                            "show_points": true,
+                            "namespace": "STAR",
+                            "color": null,
+                            "hoverformat": ".2f"
+                        },
+                        "num_noncanonical_splices": {
+                            "title": "Non-canonical splices",
+                            "description": "Number of splices: Non-canonical",
+                            "suffix": " M",
+                            "dmin": 0.0,
+                            "dmax": 7.685924999999999,
+                            "hidden": true,
+                            "xaxis": {
+                                "ticksuffix": " M",
+                                "tickvals": null,
+                                "range": [
+                                    -0.038429624999999995,
+                                    7.724546773124999
+                                ]
+                            },
+                            "show_only_outliers": false,
+                            "show_points": true,
+                            "namespace": "STAR",
+                            "color": null,
+                            "hoverformat": ".2f"
+                        },
+                        "mismatch_rate": {
+                            "title": "Mismatch rate",
+                            "description": "Mismatch rate per base",
+                            "suffix": "%",
+                            "dmin": 0.0,
+                            "dmax": 0.47,
+                            "hidden": false,
+                            "xaxis": {
+                                "ticksuffix": "%",
+                                "tickvals": null,
+                                "range": [
+                                    -0.00235,
+                                    0.47236174999999997
+                                ]
+                            },
+                            "show_only_outliers": false,
+                            "show_points": true,
+                            "namespace": "STAR",
+                            "color": null,
+                            "hoverformat": ".2f"
+                        },
+                        "deletion_rate": {
+                            "title": "Del rate",
+                            "description": "Deletion rate per base",
+                            "suffix": "%",
+                            "dmin": 0.0,
+                            "dmax": 0.01,
+                            "hidden": false,
+                            "xaxis": {
+                                "ticksuffix": "%",
+                                "tickvals": null,
+                                "range": [
+                                    -5e-05,
+                                    0.01005025
+                                ]
+                            },
+                            "show_only_outliers": false,
+                            "show_points": true,
+                            "namespace": "STAR",
+                            "color": null,
+                            "hoverformat": ".2f"
+                        },
+                        "deletion_length": {
+                            "title": "Del len",
+                            "description": "Deletion average length",
+                            "suffix": "bp",
+                            "dmin": 0.0,
+                            "dmax": 1.55,
+                            "hidden": false,
+                            "xaxis": {
+                                "ticksuffix": "bp",
+                                "tickvals": null,
+                                "range": [
+                                    -0.007750000000000001,
+                                    1.55778875
+                                ]
+                            },
+                            "show_only_outliers": false,
+                            "show_points": true,
+                            "namespace": "STAR",
+                            "color": null,
+                            "hoverformat": ".2f"
+                        },
+                        "insertion_rate": {
+                            "title": "Ins rate",
+                            "description": "Insertion rate per base",
+                            "suffix": "%",
+                            "dmin": 0.0,
+                            "dmax": 0.02,
+                            "hidden": false,
+                            "xaxis": {
+                                "ticksuffix": "%",
+                                "tickvals": null,
+                                "range": [
+                                    -0.0001,
+                                    0.0201005
+                                ]
+                            },
+                            "show_only_outliers": false,
+                            "show_points": true,
+                            "namespace": "STAR",
+                            "color": null,
+                            "hoverformat": ".2f"
+                        },
+                        "insertion_length": {
+                            "title": "Ins len",
+                            "description": "Insertion average length",
+                            "suffix": "bp",
+                            "dmin": 0.0,
+                            "dmax": 1.38,
+                            "hidden": false,
+                            "xaxis": {
+                                "ticksuffix": "bp",
+                                "tickvals": null,
+                                "range": [
+                                    -0.0069,
+                                    1.3869345
+                                ]
+                            },
+                            "show_only_outliers": false,
+                            "show_points": true,
+                            "namespace": "STAR",
+                            "color": null,
+                            "hoverformat": ".2f"
+                        }
+                    },
+                    "violin_value_by_sample_by_metric": {
+                        "total_reads": {
+                            "STARsolo": 7.685924999999999
+                        },
+                        "mapped": {
+                            "STARsolo": 7.398428
+                        },
+                        "mapped_percent": {
+                            "STARsolo": 96.25
+                        },
+                        "uniquely_mapped": {
+                            "STARsolo": 6.801633
+                        },
+                        "uniquely_mapped_percent": {
+                            "STARsolo": 88.49
+                        },
+                        "multimapped": {
+                            "STARsolo": 0.596795
+                        },
+                        "avg_input_read_length": {
+                            "STARsolo": 91.0
+                        },
+                        "avg_mapped_read_length": {
+                            "STARsolo": 89.31
+                        },
+                        "num_splices": {
+                            "STARsolo": 1.081061
+                        },
+                        "num_annotated_splices": {
+                            "STARsolo": 1.0596539999999999
+                        },
+                        "num_GTAG_splices": {
+                            "STARsolo": 1.0698269999999999
+                        },
+                        "num_GCAG_splices": {
+                            "STARsolo": 0.003208
+                        },
+                        "num_ATAC_splices": {
+                            "STARsolo": 0.00017199999999999998
+                        },
+                        "num_noncanonical_splices": {
+                            "STARsolo": 0.007854
+                        },
+                        "mismatch_rate": {
+                            "STARsolo": 0.47
+                        },
+                        "deletion_rate": {
+                            "STARsolo": 0.01
+                        },
+                        "deletion_length": {
+                            "STARsolo": 1.55
+                        },
+                        "insertion_rate": {
+                            "STARsolo": 0.02
+                        },
+                        "insertion_length": {
+                            "STARsolo": 1.38
+                        }
+                    },
+                    "scatter_value_by_sample_by_metric": {
+                        "total_reads": {},
+                        "mapped": {},
+                        "mapped_percent": {},
+                        "uniquely_mapped": {},
+                        "uniquely_mapped_percent": {},
+                        "multimapped": {},
+                        "avg_input_read_length": {},
+                        "avg_mapped_read_length": {},
+                        "num_splices": {},
+                        "num_annotated_splices": {},
+                        "num_GTAG_splices": {},
+                        "num_GCAG_splices": {},
+                        "num_ATAC_splices": {},
+                        "num_noncanonical_splices": {},
+                        "mismatch_rate": {},
+                        "deletion_rate": {},
+                        "deletion_length": {},
+                        "insertion_rate": {},
+                        "insertion_length": {}
+                    },
+                    "all_samples": [
+                        "STARsolo"
+                    ],
+                    "scatter_trace_params": {
+                        "mode": "markers",
+                        "marker": {
+                            "size": 4,
+                            "color": "#0b79e6"
+                        },
+                        "showlegend": false,
+                        "hovertemplate": "<b>%{text}</b>: %{x}<extra></extra>",
+                        "hoverlabel": {
+                            "bgcolor": "white"
+                        }
+                    }
+                }
+            ],
+            "pconfig": {
+                "id": "star_summary_table",
+                "table_title": null,
+                "title": "STAR: Summary Statistics",
+                "height": null,
+                "width": null,
+                "square": false,
+                "logswitch": false,
+                "logswitch_active": false,
+                "logswitch_label": "Log10",
+                "cpswitch": true,
+                "cpswitch_c_active": true,
+                "cpswitch_counts_label": "Counts",
+                "cpswitch_percent_label": "Percentages",
+                "xLog": null,
+                "yLog": null,
+                "xlog": false,
+                "ylog": false,
+                "data_labels": [],
+                "xTitle": null,
+                "yTitle": null,
+                "xlab": null,
+                "ylab": null,
+                "xsuffix": null,
+                "ysuffix": null,
+                "tt_suffix": null,
+                "xLabFormat": null,
+                "yLabFormat": null,
+                "xLabelFormat": null,
+                "yLabelFormat": null,
+                "xlab_format": null,
+                "ylab_format": null,
+                "tt_label": null,
+                "xDecimals": null,
+                "yDecimals": null,
+                "decimalPlaces": null,
+                "x_decimals": null,
+                "y_decimals": null,
+                "tt_decimals": null,
+                "xmin": null,
+                "xmax": null,
+                "ymin": null,
+                "ymax": null,
+                "xFloor": null,
+                "xCeiling": null,
+                "yFloor": null,
+                "yCeiling": null,
+                "x_clipmin": null,
+                "x_clipmax": null,
+                "y_clipmin": null,
+                "y_clipmax": null,
+                "save_data_file": true,
+                "showlegend": null
+            },
+            "add_log_tab": false,
+            "add_pct_tab": false,
+            "l_active": false,
+            "p_active": false,
+            "pct_axis_update": {
+                "ticksuffix": "%",
+                "hoverformat": ".1f"
+            },
+            "axis_controlled_by_switches": [],
+            "square": false,
+            "flat": false,
+            "defer_render": false,
+            "violin_height": 70,
+            "extra_height": 63,
+            "no_violin": false,
+            "show_table": true,
+            "show_table_by_default": true,
+            "n_samples": 1,
+            "main_table_dt": {
+                "id": "table-star_summary_table",
+                "raw_data": [
+                    {
+                        "STARsolo": {
+                            "total_reads": 7.685924999999999,
+                            "mapped": 7.398428,
+                            "mapped_percent": 96.25,
+                            "uniquely_mapped": 6.801633,
+                            "uniquely_mapped_percent": 88.49,
+                            "multimapped": 0.596795,
+                            "avg_input_read_length": 91.0,
+                            "avg_mapped_read_length": 89.31,
+                            "num_splices": 1.081061,
+                            "num_annotated_splices": 1.0596539999999999,
+                            "num_GTAG_splices": 1.0698269999999999,
+                            "num_GCAG_splices": 0.003208,
+                            "num_ATAC_splices": 0.00017199999999999998,
+                            "num_noncanonical_splices": 0.007854,
+                            "mismatch_rate": 0.47,
+                            "deletion_rate": 0.01,
+                            "deletion_length": 1.55,
+                            "insertion_rate": 0.02,
+                            "insertion_length": 1.38
+                        }
+                    }
+                ],
+                "formatted_data": [
+                    {
+                        "STARsolo": {
+                            "total_reads": "7.7",
+                            "mapped": "7.4",
+                            "mapped_percent": "96.2",
+                            "uniquely_mapped": "6.8",
+                            "uniquely_mapped_percent": "88.5",
+                            "multimapped": "0.6",
+                            "avg_input_read_length": "91.0",
+                            "avg_mapped_read_length": "89.3",
+                            "num_splices": "1.1",
+                            "num_annotated_splices": "1.1",
+                            "num_GTAG_splices": "1.1",
+                            "num_GCAG_splices": "0.0",
+                            "num_ATAC_splices": "0.0",
+                            "num_noncanonical_splices": "0.0",
+                            "mismatch_rate": "0.5",
+                            "deletion_rate": "0.0",
+                            "deletion_length": "1.6",
+                            "insertion_rate": "0.0",
+                            "insertion_length": "1.4"
+                        }
+                    }
+                ],
+                "headers_in_order": {
+                    "1000": [
+                        [
+                            0,
+                            "total_reads"
+                        ],
+                        [
+                            0,
+                            "mapped"
+                        ],
+                        [
+                            0,
+                            "mapped_percent"
+                        ],
+                        [
+                            0,
+                            "uniquely_mapped"
+                        ],
+                        [
+                            0,
+                            "uniquely_mapped_percent"
+                        ],
+                        [
+                            0,
+                            "multimapped"
+                        ],
+                        [
+                            0,
+                            "avg_input_read_length"
+                        ],
+                        [
+                            0,
+                            "avg_mapped_read_length"
+                        ],
+                        [
+                            0,
+                            "num_splices"
+                        ],
+                        [
+                            0,
+                            "num_annotated_splices"
+                        ],
+                        [
+                            0,
+                            "num_GTAG_splices"
+                        ],
+                        [
+                            0,
+                            "num_GCAG_splices"
+                        ],
+                        [
+                            0,
+                            "num_ATAC_splices"
+                        ],
+                        [
+                            0,
+                            "num_noncanonical_splices"
+                        ],
+                        [
+                            0,
+                            "mismatch_rate"
+                        ],
+                        [
+                            0,
+                            "deletion_rate"
+                        ],
+                        [
+                            0,
+                            "deletion_length"
+                        ],
+                        [
+                            0,
+                            "insertion_rate"
+                        ],
+                        [
+                            0,
+                            "insertion_length"
+                        ]
+                    ]
+                },
+                "headers": [
+                    {
+                        "total_reads": {
+                            "id": null,
+                            "rid": "total_reads",
+                            "title": "Total Reads",
+                            "description": "Number of input reads",
+                            "namespace": "STAR",
+                            "scale": "Blues",
+                            "hidden": false,
+                            "colour": null,
+                            "color": null,
+                            "placement": 1000.0,
+                            "max": null,
+                            "dmax": 7.685924999999999,
+                            "min": null,
+                            "dmin": 0.0,
+                            "ceiling": null,
+                            "floor": null,
+                            "minrange": null,
+                            "shared_key": "read_count",
+                            "tt_decimals": null,
+                            "suffix": " M",
+                            "cond_formatting_colours": [
+                                {
+                                    "blue": "#337ab7"
+                                },
+                                {
+                                    "lbue": "#5bc0de"
+                                },
+                                {
+                                    "pass": "#5cb85c"
+                                },
+                                {
+                                    "warn": "#f0ad4e"
+                                },
+                                {
+                                    "fail": "#d9534f"
+                                }
+                            ],
+                            "cond_formatting_rules": {},
+                            "bgcols": {},
+                            "bars_zero_centrepoint": false
+                        },
+                        "mapped": {
+                            "id": null,
+                            "rid": "mapped",
+                            "title": "Aligned",
+                            "description": "Mapped reads",
+                            "namespace": "STAR",
+                            "scale": "PuRd",
+                            "hidden": true,
+                            "colour": null,
+                            "color": null,
+                            "placement": 1000.0,
+                            "max": null,
+                            "dmax": 7.685924999999999,
+                            "min": null,
+                            "dmin": 0.0,
+                            "ceiling": null,
+                            "floor": null,
+                            "minrange": null,
+                            "shared_key": "read_count",
+                            "tt_decimals": null,
+                            "suffix": " M",
+                            "cond_formatting_colours": [
+                                {
+                                    "blue": "#337ab7"
+                                },
+                                {
+                                    "lbue": "#5bc0de"
+                                },
+                                {
+                                    "pass": "#5cb85c"
+                                },
+                                {
+                                    "warn": "#f0ad4e"
+                                },
+                                {
+                                    "fail": "#d9534f"
+                                }
+                            ],
+                            "cond_formatting_rules": {},
+                            "bgcols": {},
+                            "bars_zero_centrepoint": false
+                        },
+                        "mapped_percent": {
+                            "id": null,
+                            "rid": "mapped_percent",
+                            "title": "Aligned",
+                            "description": "% Mapped reads",
+                            "namespace": "STAR",
+                            "scale": "PuRd",
+                            "hidden": false,
+                            "colour": null,
+                            "color": null,
+                            "placement": 1000.0,
+                            "max": null,
+                            "dmax": 96.25,
+                            "min": null,
+                            "dmin": 0.0,
+                            "ceiling": null,
+                            "floor": null,
+                            "minrange": null,
+                            "shared_key": null,
+                            "tt_decimals": null,
+                            "suffix": "%",
+                            "cond_formatting_colours": [
+                                {
+                                    "blue": "#337ab7"
+                                },
+                                {
+                                    "lbue": "#5bc0de"
+                                },
+                                {
+                                    "pass": "#5cb85c"
+                                },
+                                {
+                                    "warn": "#f0ad4e"
+                                },
+                                {
+                                    "fail": "#d9534f"
+                                }
+                            ],
+                            "cond_formatting_rules": {},
+                            "bgcols": {},
+                            "bars_zero_centrepoint": false
+                        },
+                        "uniquely_mapped": {
+                            "id": null,
+                            "rid": "uniquely_mapped",
+                            "title": "Uniq aligned",
+                            "description": "Uniquely mapped reads",
+                            "namespace": "STAR",
+                            "scale": "YlGn",
+                            "hidden": true,
+                            "colour": null,
+                            "color": null,
+                            "placement": 1000.0,
+                            "max": null,
+                            "dmax": 7.685924999999999,
+                            "min": null,
+                            "dmin": 0.0,
+                            "ceiling": null,
+                            "floor": null,
+                            "minrange": null,
+                            "shared_key": "read_count",
+                            "tt_decimals": null,
+                            "suffix": " M",
+                            "cond_formatting_colours": [
+                                {
+                                    "blue": "#337ab7"
+                                },
+                                {
+                                    "lbue": "#5bc0de"
+                                },
+                                {
+                                    "pass": "#5cb85c"
+                                },
+                                {
+                                    "warn": "#f0ad4e"
+                                },
+                                {
+                                    "fail": "#d9534f"
+                                }
+                            ],
+                            "cond_formatting_rules": {},
+                            "bgcols": {},
+                            "bars_zero_centrepoint": false
+                        },
+                        "uniquely_mapped_percent": {
+                            "id": null,
+                            "rid": "uniquely_mapped_percent",
+                            "title": "Uniq aligned",
+                            "description": "% Uniquely mapped reads",
+                            "namespace": "STAR",
+                            "scale": "YlGn",
+                            "hidden": false,
+                            "colour": null,
+                            "color": null,
+                            "placement": 1000.0,
+                            "max": null,
+                            "dmax": 88.49,
+                            "min": null,
+                            "dmin": 0.0,
+                            "ceiling": null,
+                            "floor": null,
+                            "minrange": null,
+                            "shared_key": null,
+                            "tt_decimals": null,
+                            "suffix": "%",
+                            "cond_formatting_colours": [
+                                {
+                                    "blue": "#337ab7"
+                                },
+                                {
+                                    "lbue": "#5bc0de"
+                                },
+                                {
+                                    "pass": "#5cb85c"
+                                },
+                                {
+                                    "warn": "#f0ad4e"
+                                },
+                                {
+                                    "fail": "#d9534f"
+                                }
+                            ],
+                            "cond_formatting_rules": {},
+                            "bgcols": {},
+                            "bars_zero_centrepoint": false
+                        },
+                        "multimapped": {
+                            "id": null,
+                            "rid": "multimapped",
+                            "title": "Multimapped",
+                            "description": "Multiple mapped reads",
+                            "namespace": "STAR",
+                            "scale": "PuRd",
+                            "hidden": true,
+                            "colour": null,
+                            "color": null,
+                            "placement": 1000.0,
+                            "max": null,
+                            "dmax": 7.685924999999999,
+                            "min": null,
+                            "dmin": 0.0,
+                            "ceiling": null,
+                            "floor": null,
+                            "minrange": null,
+                            "shared_key": "read_count",
+                            "tt_decimals": null,
+                            "suffix": " M",
+                            "cond_formatting_colours": [
+                                {
+                                    "blue": "#337ab7"
+                                },
+                                {
+                                    "lbue": "#5bc0de"
+                                },
+                                {
+                                    "pass": "#5cb85c"
+                                },
+                                {
+                                    "warn": "#f0ad4e"
+                                },
+                                {
+                                    "fail": "#d9534f"
+                                }
+                            ],
+                            "cond_formatting_rules": {},
+                            "bgcols": {},
+                            "bars_zero_centrepoint": false
+                        },
+                        "avg_input_read_length": {
+                            "id": null,
+                            "rid": "avg_input_read_length",
+                            "title": "Avg. read len",
+                            "description": "Average input read length",
+                            "namespace": "STAR",
+                            "scale": "Blues",
+                            "hidden": true,
+                            "colour": null,
+                            "color": null,
+                            "placement": 1000.0,
+                            "max": null,
+                            "dmax": 91.0,
+                            "min": null,
+                            "dmin": 0.0,
+                            "ceiling": null,
+                            "floor": null,
+                            "minrange": null,
+                            "shared_key": null,
+                            "tt_decimals": null,
+                            "suffix": "bp",
+                            "cond_formatting_colours": [
+                                {
+                                    "blue": "#337ab7"
+                                },
+                                {
+                                    "lbue": "#5bc0de"
+                                },
+                                {
+                                    "pass": "#5cb85c"
+                                },
+                                {
+                                    "warn": "#f0ad4e"
+                                },
+                                {
+                                    "fail": "#d9534f"
+                                }
+                            ],
+                            "cond_formatting_rules": {},
+                            "bgcols": {},
+                            "bars_zero_centrepoint": false
+                        },
+                        "avg_mapped_read_length": {
+                            "id": null,
+                            "rid": "avg_mapped_read_length",
+                            "title": "Avg. mapped len",
+                            "description": "Average mapped length",
+                            "namespace": "STAR",
+                            "scale": "Blues",
+                            "hidden": false,
+                            "colour": null,
+                            "color": null,
+                            "placement": 1000.0,
+                            "max": null,
+                            "dmax": 89.31,
+                            "min": null,
+                            "dmin": 0.0,
+                            "ceiling": null,
+                            "floor": null,
+                            "minrange": null,
+                            "shared_key": null,
+                            "tt_decimals": null,
+                            "suffix": "bp",
+                            "cond_formatting_colours": [
+                                {
+                                    "blue": "#337ab7"
+                                },
+                                {
+                                    "lbue": "#5bc0de"
+                                },
+                                {
+                                    "pass": "#5cb85c"
+                                },
+                                {
+                                    "warn": "#f0ad4e"
+                                },
+                                {
+                                    "fail": "#d9534f"
+                                }
+                            ],
+                            "cond_formatting_rules": {},
+                            "bgcols": {},
+                            "bars_zero_centrepoint": false
+                        },
+                        "num_splices": {
+                            "id": null,
+                            "rid": "num_splices",
+                            "title": "Splices",
+                            "description": "Number of splices: Total",
+                            "namespace": "STAR",
+                            "scale": "Blues",
+                            "hidden": true,
+                            "colour": null,
+                            "color": null,
+                            "placement": 1000.0,
+                            "max": null,
+                            "dmax": 7.685924999999999,
+                            "min": null,
+                            "dmin": 0.0,
+                            "ceiling": null,
+                            "floor": null,
+                            "minrange": null,
+                            "shared_key": "read_count",
+                            "tt_decimals": null,
+                            "suffix": " M",
+                            "cond_formatting_colours": [
+                                {
+                                    "blue": "#337ab7"
+                                },
+                                {
+                                    "lbue": "#5bc0de"
+                                },
+                                {
+                                    "pass": "#5cb85c"
+                                },
+                                {
+                                    "warn": "#f0ad4e"
+                                },
+                                {
+                                    "fail": "#d9534f"
+                                }
+                            ],
+                            "cond_formatting_rules": {},
+                            "bgcols": {},
+                            "bars_zero_centrepoint": false
+                        },
+                        "num_annotated_splices": {
+                            "id": null,
+                            "rid": "num_annotated_splices",
+                            "title": "Annotated splices",
+                            "description": "Number of splices: Annotated (sjdb)",
+                            "namespace": "STAR",
+                            "scale": "Blues",
+                            "hidden": false,
+                            "colour": null,
+                            "color": null,
+                            "placement": 1000.0,
+                            "max": null,
+                            "dmax": 7.685924999999999,
+                            "min": null,
+                            "dmin": 0.0,
+                            "ceiling": null,
+                            "floor": null,
+                            "minrange": null,
+                            "shared_key": "read_count",
+                            "tt_decimals": null,
+                            "suffix": " M",
+                            "cond_formatting_colours": [
+                                {
+                                    "blue": "#337ab7"
+                                },
+                                {
+                                    "lbue": "#5bc0de"
+                                },
+                                {
+                                    "pass": "#5cb85c"
+                                },
+                                {
+                                    "warn": "#f0ad4e"
+                                },
+                                {
+                                    "fail": "#d9534f"
+                                }
+                            ],
+                            "cond_formatting_rules": {},
+                            "bgcols": {},
+                            "bars_zero_centrepoint": false
+                        },
+                        "num_GTAG_splices": {
+                            "id": null,
+                            "rid": "num_GTAG_splices",
+                            "title": "GT/AG splices",
+                            "description": "Number of splices: GT/AG",
+                            "namespace": "STAR",
+                            "scale": "Blues",
+                            "hidden": true,
+                            "colour": null,
+                            "color": null,
+                            "placement": 1000.0,
+                            "max": null,
+                            "dmax": 7.685924999999999,
+                            "min": null,
+                            "dmin": 0.0,
+                            "ceiling": null,
+                            "floor": null,
+                            "minrange": null,
+                            "shared_key": "read_count",
+                            "tt_decimals": null,
+                            "suffix": " M",
+                            "cond_formatting_colours": [
+                                {
+                                    "blue": "#337ab7"
+                                },
+                                {
+                                    "lbue": "#5bc0de"
+                                },
+                                {
+                                    "pass": "#5cb85c"
+                                },
+                                {
+                                    "warn": "#f0ad4e"
+                                },
+                                {
+                                    "fail": "#d9534f"
+                                }
+                            ],
+                            "cond_formatting_rules": {},
+                            "bgcols": {},
+                            "bars_zero_centrepoint": false
+                        },
+                        "num_GCAG_splices": {
+                            "id": null,
+                            "rid": "num_GCAG_splices",
+                            "title": "GC/AG splices",
+                            "description": "Number of splices: GC/AG",
+                            "namespace": "STAR",
+                            "scale": "Blues",
+                            "hidden": true,
+                            "colour": null,
+                            "color": null,
+                            "placement": 1000.0,
+                            "max": null,
+                            "dmax": 7.685924999999999,
+                            "min": null,
+                            "dmin": 0.0,
+                            "ceiling": null,
+                            "floor": null,
+                            "minrange": null,
+                            "shared_key": "read_count",
+                            "tt_decimals": null,
+                            "suffix": " M",
+                            "cond_formatting_colours": [
+                                {
+                                    "blue": "#337ab7"
+                                },
+                                {
+                                    "lbue": "#5bc0de"
+                                },
+                                {
+                                    "pass": "#5cb85c"
+                                },
+                                {
+                                    "warn": "#f0ad4e"
+                                },
+                                {
+                                    "fail": "#d9534f"
+                                }
+                            ],
+                            "cond_formatting_rules": {},
+                            "bgcols": {},
+                            "bars_zero_centrepoint": false
+                        },
+                        "num_ATAC_splices": {
+                            "id": null,
+                            "rid": "num_ATAC_splices",
+                            "title": "AT/AC splices",
+                            "description": "Number of splices: AT/AC",
+                            "namespace": "STAR",
+                            "scale": "Blues",
+                            "hidden": true,
+                            "colour": null,
+                            "color": null,
+                            "placement": 1000.0,
+                            "max": null,
+                            "dmax": 7.685924999999999,
+                            "min": null,
+                            "dmin": 0.0,
+                            "ceiling": null,
+                            "floor": null,
+                            "minrange": null,
+                            "shared_key": "read_count",
+                            "tt_decimals": null,
+                            "suffix": " M",
+                            "cond_formatting_colours": [
+                                {
+                                    "blue": "#337ab7"
+                                },
+                                {
+                                    "lbue": "#5bc0de"
+                                },
+                                {
+                                    "pass": "#5cb85c"
+                                },
+                                {
+                                    "warn": "#f0ad4e"
+                                },
+                                {
+                                    "fail": "#d9534f"
+                                }
+                            ],
+                            "cond_formatting_rules": {},
+                            "bgcols": {},
+                            "bars_zero_centrepoint": false
+                        },
+                        "num_noncanonical_splices": {
+                            "id": null,
+                            "rid": "num_noncanonical_splices",
+                            "title": "Non-canonical splices",
+                            "description": "Number of splices: Non-canonical",
+                            "namespace": "STAR",
+                            "scale": "Blues",
+                            "hidden": true,
+                            "colour": null,
+                            "color": null,
+                            "placement": 1000.0,
+                            "max": null,
+                            "dmax": 7.685924999999999,
+                            "min": null,
+                            "dmin": 0.0,
+                            "ceiling": null,
+                            "floor": null,
+                            "minrange": null,
+                            "shared_key": "read_count",
+                            "tt_decimals": null,
+                            "suffix": " M",
+                            "cond_formatting_colours": [
+                                {
+                                    "blue": "#337ab7"
+                                },
+                                {
+                                    "lbue": "#5bc0de"
+                                },
+                                {
+                                    "pass": "#5cb85c"
+                                },
+                                {
+                                    "warn": "#f0ad4e"
+                                },
+                                {
+                                    "fail": "#d9534f"
+                                }
+                            ],
+                            "cond_formatting_rules": {},
+                            "bgcols": {},
+                            "bars_zero_centrepoint": false
+                        },
+                        "mismatch_rate": {
+                            "id": null,
+                            "rid": "mismatch_rate",
+                            "title": "Mismatch rate",
+                            "description": "Mismatch rate per base",
+                            "namespace": "STAR",
+                            "scale": "Blues",
+                            "hidden": false,
+                            "colour": null,
+                            "color": null,
+                            "placement": 1000.0,
+                            "max": null,
+                            "dmax": 0.47,
+                            "min": null,
+                            "dmin": 0.0,
+                            "ceiling": null,
+                            "floor": null,
+                            "minrange": null,
+                            "shared_key": null,
+                            "tt_decimals": null,
+                            "suffix": "%",
+                            "cond_formatting_colours": [
+                                {
+                                    "blue": "#337ab7"
+                                },
+                                {
+                                    "lbue": "#5bc0de"
+                                },
+                                {
+                                    "pass": "#5cb85c"
+                                },
+                                {
+                                    "warn": "#f0ad4e"
+                                },
+                                {
+                                    "fail": "#d9534f"
+                                }
+                            ],
+                            "cond_formatting_rules": {},
+                            "bgcols": {},
+                            "bars_zero_centrepoint": false
+                        },
+                        "deletion_rate": {
+                            "id": null,
+                            "rid": "deletion_rate",
+                            "title": "Del rate",
+                            "description": "Deletion rate per base",
+                            "namespace": "STAR",
+                            "scale": "Blues",
+                            "hidden": false,
+                            "colour": null,
+                            "color": null,
+                            "placement": 1000.0,
+                            "max": null,
+                            "dmax": 0.01,
+                            "min": null,
+                            "dmin": 0.0,
+                            "ceiling": null,
+                            "floor": null,
+                            "minrange": null,
+                            "shared_key": null,
+                            "tt_decimals": null,
+                            "suffix": "%",
+                            "cond_formatting_colours": [
+                                {
+                                    "blue": "#337ab7"
+                                },
+                                {
+                                    "lbue": "#5bc0de"
+                                },
+                                {
+                                    "pass": "#5cb85c"
+                                },
+                                {
+                                    "warn": "#f0ad4e"
+                                },
+                                {
+                                    "fail": "#d9534f"
+                                }
+                            ],
+                            "cond_formatting_rules": {},
+                            "bgcols": {},
+                            "bars_zero_centrepoint": false
+                        },
+                        "deletion_length": {
+                            "id": null,
+                            "rid": "deletion_length",
+                            "title": "Del len",
+                            "description": "Deletion average length",
+                            "namespace": "STAR",
+                            "scale": "Blues",
+                            "hidden": false,
+                            "colour": null,
+                            "color": null,
+                            "placement": 1000.0,
+                            "max": null,
+                            "dmax": 1.55,
+                            "min": null,
+                            "dmin": 0.0,
+                            "ceiling": null,
+                            "floor": null,
+                            "minrange": null,
+                            "shared_key": null,
+                            "tt_decimals": null,
+                            "suffix": "bp",
+                            "cond_formatting_colours": [
+                                {
+                                    "blue": "#337ab7"
+                                },
+                                {
+                                    "lbue": "#5bc0de"
+                                },
+                                {
+                                    "pass": "#5cb85c"
+                                },
+                                {
+                                    "warn": "#f0ad4e"
+                                },
+                                {
+                                    "fail": "#d9534f"
+                                }
+                            ],
+                            "cond_formatting_rules": {},
+                            "bgcols": {},
+                            "bars_zero_centrepoint": false
+                        },
+                        "insertion_rate": {
+                            "id": null,
+                            "rid": "insertion_rate",
+                            "title": "Ins rate",
+                            "description": "Insertion rate per base",
+                            "namespace": "STAR",
+                            "scale": "Blues",
+                            "hidden": false,
+                            "colour": null,
+                            "color": null,
+                            "placement": 1000.0,
+                            "max": null,
+                            "dmax": 0.02,
+                            "min": null,
+                            "dmin": 0.0,
+                            "ceiling": null,
+                            "floor": null,
+                            "minrange": null,
+                            "shared_key": null,
+                            "tt_decimals": null,
+                            "suffix": "%",
+                            "cond_formatting_colours": [
+                                {
+                                    "blue": "#337ab7"
+                                },
+                                {
+                                    "lbue": "#5bc0de"
+                                },
+                                {
+                                    "pass": "#5cb85c"
+                                },
+                                {
+                                    "warn": "#f0ad4e"
+                                },
+                                {
+                                    "fail": "#d9534f"
+                                }
+                            ],
+                            "cond_formatting_rules": {},
+                            "bgcols": {},
+                            "bars_zero_centrepoint": false
+                        },
+                        "insertion_length": {
+                            "id": null,
+                            "rid": "insertion_length",
+                            "title": "Ins len",
+                            "description": "Insertion average length",
+                            "namespace": "STAR",
+                            "scale": "Blues",
+                            "hidden": false,
+                            "colour": null,
+                            "color": null,
+                            "placement": 1000.0,
+                            "max": null,
+                            "dmax": 1.38,
+                            "min": null,
+                            "dmin": 0.0,
+                            "ceiling": null,
+                            "floor": null,
+                            "minrange": null,
+                            "shared_key": null,
+                            "tt_decimals": null,
+                            "suffix": "bp",
+                            "cond_formatting_colours": [
+                                {
+                                    "blue": "#337ab7"
+                                },
+                                {
+                                    "lbue": "#5bc0de"
+                                },
+                                {
+                                    "pass": "#5cb85c"
+                                },
+                                {
+                                    "warn": "#f0ad4e"
+                                },
+                                {
+                                    "fail": "#d9534f"
+                                }
+                            ],
+                            "cond_formatting_rules": {},
+                            "bgcols": {},
+                            "bars_zero_centrepoint": false
+                        }
+                    }
+                ],
+                "pconfig": {
+                    "id": "star_summary_table",
+                    "table_title": null,
+                    "title": "STAR: Summary Statistics",
+                    "height": null,
+                    "width": null,
+                    "square": false,
+                    "logswitch": false,
+                    "logswitch_active": false,
+                    "logswitch_label": "Log10",
+                    "cpswitch": true,
+                    "cpswitch_c_active": true,
+                    "cpswitch_counts_label": "Counts",
+                    "cpswitch_percent_label": "Percentages",
+                    "xLog": null,
+                    "yLog": null,
+                    "xlog": false,
+                    "ylog": false,
+                    "data_labels": [],
+                    "xTitle": null,
+                    "yTitle": null,
+                    "xlab": null,
+                    "ylab": null,
+                    "xsuffix": null,
+                    "ysuffix": null,
+                    "tt_suffix": null,
+                    "xLabFormat": null,
+                    "yLabFormat": null,
+                    "xLabelFormat": null,
+                    "yLabelFormat": null,
+                    "xlab_format": null,
+                    "ylab_format": null,
+                    "tt_label": null,
+                    "xDecimals": null,
+                    "yDecimals": null,
+                    "decimalPlaces": null,
+                    "x_decimals": null,
+                    "y_decimals": null,
+                    "tt_decimals": null,
+                    "xmin": null,
+                    "xmax": null,
+                    "ymin": null,
+                    "ymax": null,
+                    "xFloor": null,
+                    "xCeiling": null,
+                    "yFloor": null,
+                    "yCeiling": null,
+                    "x_clipmin": null,
+                    "x_clipmax": null,
+                    "y_clipmin": null,
+                    "y_clipmax": null,
+                    "save_data_file": true,
+                    "showlegend": null,
+                    "namespace": "STAR",
+                    "save_file": false,
+                    "raw_data_fn": null,
+                    "defaultsort": null,
+                    "sortRows": true,
+                    "sort_rows": true,
+                    "only_defined_headers": true,
+                    "col1_header": "Sample Name",
+                    "no_beeswarm": false,
+                    "no_violin": false,
+                    "scale": "GnBu",
+                    "min": null
+                }
+            }
+        },
+        "star_alignment_plot": {
+            "id": "star_alignment_plot",
+            "plot_type": "bar_graph",
+            "layout": {
+                "autosize": true,
+                "colorway": [
+                    "#7cb5ec",
+                    "#434348",
+                    "#90ed7d",
+                    "#f7a35c",
+                    "#8085e9",
+                    "#f15c80",
+                    "#e4d354",
+                    "#2b908f",
+                    "#f45b5b",
+                    "#91e8e1"
+                ],
+                "font": {
+                    "family": "'Lucida Grande', 'Open Sans', verdana, arial, sans-serif"
+                },
+                "height": 300,
+                "hoverlabel": {
+                    "namelength": -1,
+                    "bgcolor": "rgba(255, 255, 255, 0.8)",
+                    "font": {
+                        "color": "black"
+                    }
+                },
+                "margin": {
+                    "b": 65,
+                    "l": 60,
+                    "pad": 5,
+                    "r": 15,
+                    "t": 50
+                },
+                "modebar": {
+                    "activecolor": "rgba(0, 0, 0, 1)",
+                    "bgcolor": "rgba(0, 0, 0, 0)",
+                    "color": "rgba(0, 0, 0, 0.5)"
+                },
+                "paper_bgcolor": "white",
+                "plot_bgcolor": "white",
+                "showlegend": true,
+                "title": {
+                    "font": {
+                        "size": 20
+                    },
+                    "text": "STAR: Alignment Scores",
+                    "x": 0.5,
+                    "xanchor": "center"
+                },
+                "xaxis": {
+                    "automargin": true,
+                    "color": "rgba(0,0,0,0.3)",
+                    "gridcolor": "rgba(0,0,0,0.05)",
+                    "tickfont": {
+                        "color": "rgba(0,0,0,1)",
+                        "size": 10
+                    },
+                    "zerolinecolor": "rgba(0,0,0,0.05)"
+                },
+                "yaxis": {
+                    "automargin": true,
+                    "color": "rgba(0,0,0,0.3)",
+                    "gridcolor": "rgba(0,0,0,0.05)",
+                    "tickfont": {
+                        "color": "rgba(0,0,0,1)",
+                        "size": 10
+                    },
+                    "zerolinecolor": "rgba(0,0,0,0.05)",
+                    "showgrid": false,
+                    "categoryorder": "trace",
+                    "type": "category"
+                },
+                "barmode": "relative",
+                "bargroupgap": 0,
+                "bargap": 0.2,
+                "legend": {
+                    "tracegroupgap": 0,
+                    "traceorder": "normal"
+                },
+                "hovermode": "y unified"
+            },
+            "datasets": [
+                {
+                    "plot_id": "star_alignment_plot",
+                    "label": "1",
+                    "uid": "star_alignment_plot",
+                    "dconfig": {
+                        "title": "STAR: Alignment Scores"
+                    },
+                    "layout": {
+                        "title": {
+                            "text": "STAR: Alignment Scores"
+                        },
+                        "xaxis": {
+                            "title": {
+                                "text": "# Reads"
+                            },
+                            "hoverformat": ",.0f",
+                            "ticksuffix": "",
+                            "autorangeoptions": {
+                                "minallowed": 0,
+                                "maxallowed": 7685925
+                            }
+                        },
+                        "yaxis": {
+                            "title": null,
+                            "hoverformat": null,
+                            "ticksuffix": ""
+                        },
+                        "showlegend": true
+                    },
+                    "trace_params": {
+                        "hovertemplate": "<b></b>%{meta}: <b>%{x}</b><extra></extra>",
+                        "orientation": "h",
+                        "marker": {
+                            "line": {
+                                "width": 0
+                            }
+                        },
+                        "textposition": "inside",
+                        "insidetextanchor": "start"
+                    },
+                    "pct_range": {
+                        "xaxis": {
+                            "min": 0,
+                            "max": 100
+                        },
+                        "yaxis": {
+                            "min": 0,
+                            "max": 100
+                        }
+                    },
+                    "n_samples": 1,
+                    "cats": [
+                        {
+                            "name": "Uniquely mapped",
+                            "data": [
+                                6801633
+                            ],
+                            "color": "67,123,177",
+                            "data_pct": [
+                                88.49465744201251
+                            ]
+                        },
+                        {
+                            "name": "Mapped to multiple loci",
+                            "data": [
+                                596795
+                            ],
+                            "color": "124,181,236",
+                            "data_pct": [
+                                7.764777824399796
+                            ]
+                        },
+                        {
+                            "name": "Mapped to too many loci",
+                            "data": [
+                                23235
+                            ],
+                            "color": "247,163,92",
+                            "data_pct": [
+                                0.30230583826930396
+                            ]
+                        },
+                        {
+                            "name": "Unmapped: too short",
+                            "data": [
+                                245057
+                            ],
+                            "color": "177,8,76",
+                            "data_pct": [
+                                3.1883865637512727
+                            ]
+                        },
+                        {
+                            "name": "Unmapped: other",
+                            "data": [
+                                19205
+                            ],
+                            "color": "127,0,0",
+                            "data_pct": [
+                                0.2498723315671178
+                            ]
+                        }
+                    ],
+                    "samples": [
+                        "STARsolo"
+                    ]
+                }
+            ],
+            "pconfig": {
+                "id": "star_alignment_plot",
+                "table_title": null,
+                "title": "STAR: Alignment Scores",
+                "height": null,
+                "width": null,
+                "square": false,
+                "logswitch": false,
+                "logswitch_active": false,
+                "logswitch_label": "Log10",
+                "cpswitch": true,
+                "cpswitch_c_active": true,
+                "cpswitch_counts_label": "Number of Reads",
+                "cpswitch_percent_label": "Percentages",
+                "xLog": null,
+                "yLog": null,
+                "xlog": false,
+                "ylog": false,
+                "data_labels": [],
+                "xTitle": null,
+                "yTitle": null,
+                "xlab": null,
+                "ylab": "# Reads",
+                "xsuffix": null,
+                "ysuffix": null,
+                "tt_suffix": null,
+                "xLabFormat": null,
+                "yLabFormat": null,
+                "xLabelFormat": null,
+                "yLabelFormat": null,
+                "xlab_format": null,
+                "ylab_format": null,
+                "tt_label": null,
+                "xDecimals": null,
+                "yDecimals": null,
+                "decimalPlaces": null,
+                "x_decimals": null,
+                "y_decimals": null,
+                "tt_decimals": null,
+                "xmin": null,
+                "xmax": null,
+                "ymin": null,
+                "ymax": null,
+                "xFloor": null,
+                "xCeiling": null,
+                "yFloor": null,
+                "yCeiling": null,
+                "x_clipmin": null,
+                "x_clipmax": null,
+                "y_clipmin": null,
+                "y_clipmax": null,
+                "save_data_file": true,
+                "showlegend": null
+            },
+            "add_log_tab": false,
+            "add_pct_tab": true,
+            "l_active": false,
+            "p_active": false,
+            "pct_axis_update": {
+                "ticksuffix": "%",
+                "hoverformat": ".1f"
+            },
+            "axis_controlled_by_switches": [
+                "xaxis"
+            ],
+            "square": false,
+            "flat": false,
+            "defer_render": false
+        },
+        "general_stats_table": {
+            "id": "general_stats_table",
+            "plot_type": "violin",
+            "layout": {
+                "autosize": true,
+                "colorway": [
+                    "#7cb5ec",
+                    "#434348",
+                    "#90ed7d",
+                    "#f7a35c",
+                    "#8085e9",
+                    "#f15c80",
+                    "#e4d354",
+                    "#2b908f",
+                    "#f45b5b",
+                    "#91e8e1"
+                ],
+                "font": {
+                    "family": "'Lucida Grande', 'Open Sans', verdana, arial, sans-serif"
+                },
+                "height": 500,
+                "hoverlabel": {
+                    "namelength": -1
+                },
+                "margin": {
+                    "b": 40,
+                    "l": 60,
+                    "pad": 0,
+                    "r": 15,
+                    "t": 50
+                },
+                "modebar": {
+                    "activecolor": "rgba(0, 0, 0, 1)",
+                    "bgcolor": "rgba(0, 0, 0, 0)",
+                    "color": "rgba(0, 0, 0, 0.5)"
+                },
+                "paper_bgcolor": "white",
+                "plot_bgcolor": "white",
+                "showlegend": false,
+                "title": {
+                    "font": {
+                        "size": 20
+                    },
+                    "text": "General Statistics",
+                    "x": 0.5,
+                    "xanchor": "center"
+                },
+                "xaxis": {
+                    "automargin": false,
+                    "color": "rgba(0,0,0,0.3)",
+                    "gridcolor": "rgba(0,0,0,0.1)",
+                    "tickfont": {
+                        "color": "rgba(0,0,0,0.5)",
+                        "size": 9
+                    },
+                    "zerolinecolor": "rgba(0,0,0,0.1)"
+                },
+                "yaxis": {
+                    "automargin": true,
+                    "color": "rgba(0,0,0,0.3)",
+                    "gridcolor": "rgba(0,0,0,0.1)",
+                    "tickfont": {
+                        "color": "rgba(0,0,0,0.5)",
+                        "size": 9
+                    },
+                    "zerolinecolor": "rgba(0,0,0,0.1)"
+                },
+                "violingap": 0,
+                "grid": {
+                    "columns": 1,
+                    "roworder": "top to bottom",
+                    "ygap": 0.4
+                }
+            },
+            "datasets": [
+                {
+                    "plot_id": "general_stats_table",
+                    "label": "1",
+                    "uid": "general_stats_table",
+                    "dconfig": {
+                        "ylab": "",
+                        "title": "General Statistics"
+                    },
+                    "layout": {
+                        "title": {
+                            "text": "General Statistics"
+                        },
+                        "xaxis": {
+                            "hoverformat": null,
+                            "ticksuffix": "",
+                            "title": {
+                                "text": null
+                            },
+                            "rangemode": "normal",
+                            "autorangeoptions": {
+                                "clipmin": null,
+                                "clipmax": null,
+                                "minallowed": null,
+                                "maxallowed": null
+                            }
+                        },
+                        "yaxis": {
+                            "hoverformat": null,
+                            "ticksuffix": "",
+                            "title": {
+                                "text": ""
+                            },
+                            "rangemode": "normal",
+                            "autorangeoptions": {
+                                "clipmin": null,
+                                "clipmax": null,
+                                "minallowed": null,
+                                "maxallowed": null
+                            }
+                        }
+                    },
+                    "trace_params": {
+                        "hovertemplate": "<b>%{text}</b>: %{x}<extra></extra>",
+                        "orientation": "h",
+                        "box": {
+                            "visible": true
+                        },
+                        "meanline": {
+                            "visible": true
+                        },
+                        "fillcolor": "#b5b5b5",
+                        "line": {
+                            "width": 2,
+                            "color": "#b5b5b5"
+                        },
+                        "opacity": 0.5,
+                        "points": false,
+                        "hoveron": "points"
+                    },
+                    "pct_range": {
+                        "xaxis": {
+                            "min": 0,
+                            "max": 100
+                        },
+                        "yaxis": {
+                            "min": 0,
+                            "max": 100
+                        }
+                    },
+                    "n_samples": 1,
+                    "metrics": [
+                        "mqc_generalstats_star_total_reads_1",
+                        "mqc_generalstats_star_mapped_1",
+                        "mqc_generalstats_star_mapped_percent_1",
+                        "mqc_generalstats_star_uniquely_mapped_1",
+                        "mqc_generalstats_star_uniquely_mapped_percent_1",
+                        "mqc_generalstats_star_multimapped_1"
+                    ],
+                    "header_by_metric": {
+                        "mqc_generalstats_star_total_reads_1": {
+                            "title": "Total Reads",
+                            "description": "Number of input reads",
+                            "suffix": " M",
+                            "dmin": 0.0,
+                            "dmax": 7.685924999999999,
+                            "hidden": true,
+                            "xaxis": {
+                                "ticksuffix": " M",
+                                "tickvals": null,
+                                "range": [
+                                    -0.038429624999999995,
+                                    7.724546773124999
+                                ]
+                            },
+                            "show_only_outliers": false,
+                            "show_points": true,
+                            "namespace": "STAR",
+                            "color": null,
+                            "hoverformat": ".2f"
+                        },
+                        "mqc_generalstats_star_mapped_1": {
+                            "title": "Aligned",
+                            "description": "Mapped reads",
+                            "suffix": " M",
+                            "dmin": 0.0,
+                            "dmax": 7.685924999999999,
+                            "hidden": true,
+                            "xaxis": {
+                                "ticksuffix": " M",
+                                "tickvals": null,
+                                "range": [
+                                    -0.038429624999999995,
+                                    7.724546773124999
+                                ]
+                            },
+                            "show_only_outliers": false,
+                            "show_points": true,
+                            "namespace": "STAR",
+                            "color": null,
+                            "hoverformat": ".2f"
+                        },
+                        "mqc_generalstats_star_mapped_percent_1": {
+                            "title": "Aligned",
+                            "description": "% Mapped reads",
+                            "suffix": "%",
+                            "dmin": 0.0,
+                            "dmax": 96.25,
+                            "hidden": false,
+                            "xaxis": {
+                                "ticksuffix": "%",
+                                "tickvals": null,
+                                "range": [
+                                    -0.48125,
+                                    96.73365625
+                                ]
+                            },
+                            "show_only_outliers": false,
+                            "show_points": true,
+                            "namespace": "STAR",
+                            "color": null,
+                            "hoverformat": ".2f"
+                        },
+                        "mqc_generalstats_star_uniquely_mapped_1": {
+                            "title": "Uniq aligned",
+                            "description": "Uniquely mapped reads",
+                            "suffix": " M",
+                            "dmin": 0.0,
+                            "dmax": 7.685924999999999,
+                            "hidden": true,
+                            "xaxis": {
+                                "ticksuffix": " M",
+                                "tickvals": null,
+                                "range": [
+                                    -0.038429624999999995,
+                                    7.724546773124999
+                                ]
+                            },
+                            "show_only_outliers": false,
+                            "show_points": true,
+                            "namespace": "STAR",
+                            "color": null,
+                            "hoverformat": ".2f"
+                        },
+                        "mqc_generalstats_star_uniquely_mapped_percent_1": {
+                            "title": "Uniq aligned",
+                            "description": "% Uniquely mapped reads",
+                            "suffix": "%",
+                            "dmin": 0.0,
+                            "dmax": 88.49,
+                            "hidden": false,
+                            "xaxis": {
+                                "ticksuffix": "%",
+                                "tickvals": null,
+                                "range": [
+                                    -0.44245,
+                                    88.93466224999999
+                                ]
+                            },
+                            "show_only_outliers": false,
+                            "show_points": true,
+                            "namespace": "STAR",
+                            "color": null,
+                            "hoverformat": ".2f"
+                        },
+                        "mqc_generalstats_star_multimapped_1": {
+                            "title": "Multimapped",
+                            "description": "Multiple mapped reads",
+                            "suffix": " M",
+                            "dmin": 0.0,
+                            "dmax": 7.685924999999999,
+                            "hidden": true,
+                            "xaxis": {
+                                "ticksuffix": " M",
+                                "tickvals": null,
+                                "range": [
+                                    -0.038429624999999995,
+                                    7.724546773124999
+                                ]
+                            },
+                            "show_only_outliers": false,
+                            "show_points": true,
+                            "namespace": "STAR",
+                            "color": null,
+                            "hoverformat": ".2f"
+                        }
+                    },
+                    "violin_value_by_sample_by_metric": {
+                        "mqc_generalstats_star_total_reads_1": {
+                            "STARsolo": 7.685924999999999
+                        },
+                        "mqc_generalstats_star_mapped_1": {
+                            "STARsolo": 7.398428
+                        },
+                        "mqc_generalstats_star_mapped_percent_1": {
+                            "STARsolo": 96.25
+                        },
+                        "mqc_generalstats_star_uniquely_mapped_1": {
+                            "STARsolo": 6.801633
+                        },
+                        "mqc_generalstats_star_uniquely_mapped_percent_1": {
+                            "STARsolo": 88.49
+                        },
+                        "mqc_generalstats_star_multimapped_1": {
+                            "STARsolo": 0.596795
+                        }
+                    },
+                    "scatter_value_by_sample_by_metric": {
+                        "mqc_generalstats_star_total_reads_1": {},
+                        "mqc_generalstats_star_mapped_1": {},
+                        "mqc_generalstats_star_mapped_percent_1": {},
+                        "mqc_generalstats_star_uniquely_mapped_1": {},
+                        "mqc_generalstats_star_uniquely_mapped_percent_1": {},
+                        "mqc_generalstats_star_multimapped_1": {}
+                    },
+                    "all_samples": [
+                        "STARsolo"
+                    ],
+                    "scatter_trace_params": {
+                        "mode": "markers",
+                        "marker": {
+                            "size": 4,
+                            "color": "#0b79e6"
+                        },
+                        "showlegend": false,
+                        "hovertemplate": "<b>%{text}</b>: %{x}<extra></extra>",
+                        "hoverlabel": {
+                            "bgcolor": "white"
+                        }
+                    }
+                }
+            ],
+            "pconfig": {
+                "id": "general_stats_table",
+                "table_title": null,
+                "title": "General Statistics",
+                "height": null,
+                "width": null,
+                "square": false,
+                "logswitch": false,
+                "logswitch_active": false,
+                "logswitch_label": "Log10",
+                "cpswitch": true,
+                "cpswitch_c_active": true,
+                "cpswitch_counts_label": "Counts",
+                "cpswitch_percent_label": "Percentages",
+                "xLog": null,
+                "yLog": null,
+                "xlog": false,
+                "ylog": false,
+                "data_labels": [],
+                "xTitle": null,
+                "yTitle": null,
+                "xlab": null,
+                "ylab": null,
+                "xsuffix": null,
+                "ysuffix": null,
+                "tt_suffix": null,
+                "xLabFormat": null,
+                "yLabFormat": null,
+                "xLabelFormat": null,
+                "yLabelFormat": null,
+                "xlab_format": null,
+                "ylab_format": null,
+                "tt_label": null,
+                "xDecimals": null,
+                "yDecimals": null,
+                "decimalPlaces": null,
+                "x_decimals": null,
+                "y_decimals": null,
+                "tt_decimals": null,
+                "xmin": null,
+                "xmax": null,
+                "ymin": null,
+                "ymax": null,
+                "xFloor": null,
+                "xCeiling": null,
+                "yFloor": null,
+                "yCeiling": null,
+                "x_clipmin": null,
+                "x_clipmax": null,
+                "y_clipmin": null,
+                "y_clipmax": null,
+                "save_data_file": true,
+                "showlegend": null
+            },
+            "add_log_tab": false,
+            "add_pct_tab": false,
+            "l_active": false,
+            "p_active": false,
+            "pct_axis_update": {
+                "ticksuffix": "%",
+                "hoverformat": ".1f"
+            },
+            "axis_controlled_by_switches": [],
+            "square": false,
+            "flat": false,
+            "defer_render": false,
+            "violin_height": 70,
+            "extra_height": 63,
+            "no_violin": false,
+            "show_table": true,
+            "show_table_by_default": true,
+            "n_samples": 1,
+            "main_table_dt": {
+                "id": "table-general_stats_table",
+                "raw_data": [
+                    {
+                        "STARsolo": {
+                            "total_reads": 7.685924999999999,
+                            "mapped": 7.398428,
+                            "mapped_percent": 96.25,
+                            "uniquely_mapped": 6.801633,
+                            "uniquely_mapped_percent": 88.49,
+                            "multimapped": 0.596795
+                        }
+                    }
+                ],
+                "formatted_data": [
+                    {
+                        "STARsolo": {
+                            "total_reads": "7.7",
+                            "mapped": "7.4",
+                            "mapped_percent": "96.2",
+                            "uniquely_mapped": "6.8",
+                            "uniquely_mapped_percent": "88.5",
+                            "multimapped": "0.6"
+                        }
+                    }
+                ],
+                "headers_in_order": {
+                    "1000": [
+                        [
+                            0,
+                            "total_reads"
+                        ],
+                        [
+                            0,
+                            "mapped"
+                        ],
+                        [
+                            0,
+                            "mapped_percent"
+                        ],
+                        [
+                            0,
+                            "uniquely_mapped"
+                        ],
+                        [
+                            0,
+                            "uniquely_mapped_percent"
+                        ],
+                        [
+                            0,
+                            "multimapped"
+                        ]
+                    ]
+                },
+                "headers": [
+                    {
+                        "total_reads": {
+                            "id": null,
+                            "rid": "mqc_generalstats_star_total_reads_1",
+                            "title": "Total Reads",
+                            "description": "Number of input reads",
+                            "namespace": "STAR",
+                            "scale": "Blues",
+                            "hidden": true,
+                            "colour": null,
+                            "color": null,
+                            "placement": 1000.0,
+                            "max": null,
+                            "dmax": 7.685924999999999,
+                            "min": null,
+                            "dmin": 0.0,
+                            "ceiling": null,
+                            "floor": null,
+                            "minrange": null,
+                            "shared_key": "read_count",
+                            "tt_decimals": null,
+                            "suffix": " M",
+                            "cond_formatting_colours": [
+                                {
+                                    "blue": "#337ab7"
+                                },
+                                {
+                                    "lbue": "#5bc0de"
+                                },
+                                {
+                                    "pass": "#5cb85c"
+                                },
+                                {
+                                    "warn": "#f0ad4e"
+                                },
+                                {
+                                    "fail": "#d9534f"
+                                }
+                            ],
+                            "cond_formatting_rules": {},
+                            "bgcols": {},
+                            "bars_zero_centrepoint": false
+                        },
+                        "mapped": {
+                            "id": null,
+                            "rid": "mqc_generalstats_star_mapped_1",
+                            "title": "Aligned",
+                            "description": "Mapped reads",
+                            "namespace": "STAR",
+                            "scale": "PuRd",
+                            "hidden": true,
+                            "colour": null,
+                            "color": null,
+                            "placement": 1000.0,
+                            "max": null,
+                            "dmax": 7.685924999999999,
+                            "min": null,
+                            "dmin": 0.0,
+                            "ceiling": null,
+                            "floor": null,
+                            "minrange": null,
+                            "shared_key": "read_count",
+                            "tt_decimals": null,
+                            "suffix": " M",
+                            "cond_formatting_colours": [
+                                {
+                                    "blue": "#337ab7"
+                                },
+                                {
+                                    "lbue": "#5bc0de"
+                                },
+                                {
+                                    "pass": "#5cb85c"
+                                },
+                                {
+                                    "warn": "#f0ad4e"
+                                },
+                                {
+                                    "fail": "#d9534f"
+                                }
+                            ],
+                            "cond_formatting_rules": {},
+                            "bgcols": {},
+                            "bars_zero_centrepoint": false
+                        },
+                        "mapped_percent": {
+                            "id": null,
+                            "rid": "mqc_generalstats_star_mapped_percent_1",
+                            "title": "Aligned",
+                            "description": "% Mapped reads",
+                            "namespace": "STAR",
+                            "scale": "PuRd",
+                            "hidden": false,
+                            "colour": null,
+                            "color": null,
+                            "placement": 1000.0,
+                            "max": null,
+                            "dmax": 96.25,
+                            "min": null,
+                            "dmin": 0.0,
+                            "ceiling": null,
+                            "floor": null,
+                            "minrange": null,
+                            "shared_key": null,
+                            "tt_decimals": null,
+                            "suffix": "%",
+                            "cond_formatting_colours": [
+                                {
+                                    "blue": "#337ab7"
+                                },
+                                {
+                                    "lbue": "#5bc0de"
+                                },
+                                {
+                                    "pass": "#5cb85c"
+                                },
+                                {
+                                    "warn": "#f0ad4e"
+                                },
+                                {
+                                    "fail": "#d9534f"
+                                }
+                            ],
+                            "cond_formatting_rules": {},
+                            "bgcols": {},
+                            "bars_zero_centrepoint": false
+                        },
+                        "uniquely_mapped": {
+                            "id": null,
+                            "rid": "mqc_generalstats_star_uniquely_mapped_1",
+                            "title": "Uniq aligned",
+                            "description": "Uniquely mapped reads",
+                            "namespace": "STAR",
+                            "scale": "YlGn",
+                            "hidden": true,
+                            "colour": null,
+                            "color": null,
+                            "placement": 1000.0,
+                            "max": null,
+                            "dmax": 7.685924999999999,
+                            "min": null,
+                            "dmin": 0.0,
+                            "ceiling": null,
+                            "floor": null,
+                            "minrange": null,
+                            "shared_key": "read_count",
+                            "tt_decimals": null,
+                            "suffix": " M",
+                            "cond_formatting_colours": [
+                                {
+                                    "blue": "#337ab7"
+                                },
+                                {
+                                    "lbue": "#5bc0de"
+                                },
+                                {
+                                    "pass": "#5cb85c"
+                                },
+                                {
+                                    "warn": "#f0ad4e"
+                                },
+                                {
+                                    "fail": "#d9534f"
+                                }
+                            ],
+                            "cond_formatting_rules": {},
+                            "bgcols": {},
+                            "bars_zero_centrepoint": false
+                        },
+                        "uniquely_mapped_percent": {
+                            "id": null,
+                            "rid": "mqc_generalstats_star_uniquely_mapped_percent_1",
+                            "title": "Uniq aligned",
+                            "description": "% Uniquely mapped reads",
+                            "namespace": "STAR",
+                            "scale": "YlGn",
+                            "hidden": false,
+                            "colour": null,
+                            "color": null,
+                            "placement": 1000.0,
+                            "max": null,
+                            "dmax": 88.49,
+                            "min": null,
+                            "dmin": 0.0,
+                            "ceiling": null,
+                            "floor": null,
+                            "minrange": null,
+                            "shared_key": null,
+                            "tt_decimals": null,
+                            "suffix": "%",
+                            "cond_formatting_colours": [
+                                {
+                                    "blue": "#337ab7"
+                                },
+                                {
+                                    "lbue": "#5bc0de"
+                                },
+                                {
+                                    "pass": "#5cb85c"
+                                },
+                                {
+                                    "warn": "#f0ad4e"
+                                },
+                                {
+                                    "fail": "#d9534f"
+                                }
+                            ],
+                            "cond_formatting_rules": {},
+                            "bgcols": {},
+                            "bars_zero_centrepoint": false
+                        },
+                        "multimapped": {
+                            "id": null,
+                            "rid": "mqc_generalstats_star_multimapped_1",
+                            "title": "Multimapped",
+                            "description": "Multiple mapped reads",
+                            "namespace": "STAR",
+                            "scale": "PuRd",
+                            "hidden": true,
+                            "colour": null,
+                            "color": null,
+                            "placement": 1000.0,
+                            "max": null,
+                            "dmax": 7.685924999999999,
+                            "min": null,
+                            "dmin": 0.0,
+                            "ceiling": null,
+                            "floor": null,
+                            "minrange": null,
+                            "shared_key": "read_count",
+                            "tt_decimals": null,
+                            "suffix": " M",
+                            "cond_formatting_colours": [
+                                {
+                                    "blue": "#337ab7"
+                                },
+                                {
+                                    "lbue": "#5bc0de"
+                                },
+                                {
+                                    "pass": "#5cb85c"
+                                },
+                                {
+                                    "warn": "#f0ad4e"
+                                },
+                                {
+                                    "fail": "#d9534f"
+                                }
+                            ],
+                            "cond_formatting_rules": {},
+                            "bgcols": {},
+                            "bars_zero_centrepoint": false
+                        }
+                    }
+                ],
+                "pconfig": {
+                    "id": "general_stats_table",
+                    "table_title": null,
+                    "title": "General Statistics",
+                    "height": null,
+                    "width": null,
+                    "square": false,
+                    "logswitch": false,
+                    "logswitch_active": false,
+                    "logswitch_label": "Log10",
+                    "cpswitch": true,
+                    "cpswitch_c_active": true,
+                    "cpswitch_counts_label": "Counts",
+                    "cpswitch_percent_label": "Percentages",
+                    "xLog": null,
+                    "yLog": null,
+                    "xlog": false,
+                    "ylog": false,
+                    "data_labels": [],
+                    "xTitle": null,
+                    "yTitle": null,
+                    "xlab": null,
+                    "ylab": null,
+                    "xsuffix": null,
+                    "ysuffix": null,
+                    "tt_suffix": null,
+                    "xLabFormat": null,
+                    "yLabFormat": null,
+                    "xLabelFormat": null,
+                    "yLabelFormat": null,
+                    "xlab_format": null,
+                    "ylab_format": null,
+                    "tt_label": null,
+                    "xDecimals": null,
+                    "yDecimals": null,
+                    "decimalPlaces": null,
+                    "x_decimals": null,
+                    "y_decimals": null,
+                    "tt_decimals": null,
+                    "xmin": null,
+                    "xmax": null,
+                    "ymin": null,
+                    "ymax": null,
+                    "xFloor": null,
+                    "xCeiling": null,
+                    "yFloor": null,
+                    "yCeiling": null,
+                    "x_clipmin": null,
+                    "x_clipmax": null,
+                    "y_clipmin": null,
+                    "y_clipmax": null,
+                    "save_data_file": true,
+                    "showlegend": null,
+                    "namespace": "",
+                    "save_file": true,
+                    "raw_data_fn": "multiqc_general_stats",
+                    "defaultsort": null,
+                    "sortRows": true,
+                    "sort_rows": true,
+                    "only_defined_headers": true,
+                    "col1_header": "Sample Name",
+                    "no_beeswarm": false,
+                    "no_violin": false,
+                    "scale": "GnBu",
+                    "min": null
+                }
+            }
+        }
+    },
+    "report_saved_raw_data": {
+        "multiqc_star": {
+            "STARsolo": {
+                "total_reads": 7685925.0,
+                "avg_input_read_length": 91.0,
+                "uniquely_mapped": 6801633.0,
+                "uniquely_mapped_percent": 88.49,
+                "avg_mapped_read_length": 89.31,
+                "num_splices": 1081061.0,
+                "num_annotated_splices": 1059654.0,
+                "num_GTAG_splices": 1069827.0,
+                "num_GCAG_splices": 3208.0,
+                "num_ATAC_splices": 172.0,
+                "num_noncanonical_splices": 7854.0,
+                "mismatch_rate": 0.47,
+                "deletion_rate": 0.01,
+                "deletion_length": 1.55,
+                "insertion_rate": 0.02,
+                "insertion_length": 1.38,
+                "multimapped": 596795.0,
+                "multimapped_percent": 7.76,
+                "multimapped_toomany": 23235.0,
+                "multimapped_toomany_percent": 0.3,
+                "unmapped_mismatches_percent": 0.0,
+                "unmapped_tooshort_percent": 3.19,
+                "unmapped_other_percent": 0.25,
+                "unmapped_mismatches": 0,
+                "unmapped_tooshort": 245057,
+                "unmapped_other": 19205,
+                "mapped_percent": 96.25,
+                "mapped": 7398428.0
+            }
+        },
+        "multiqc_general_stats": {
+            "STARsolo": {
+                "STAR_mqc_generalstats_star_total_reads_1": 7.685924999999999,
+                "STAR_mqc_generalstats_star_mapped_1": 7.398428,
+                "STAR_mqc_generalstats_star_mapped_percent_1": 96.25,
+                "STAR_mqc_generalstats_star_uniquely_mapped_1": 6.801633,
+                "STAR_mqc_generalstats_star_uniquely_mapped_percent_1": 88.49,
+                "STAR_mqc_generalstats_star_multimapped_1": 0.596795
+            }
+        }
+    },
+    "config_analysis_dir_abs": [
+        "/home/akabetso/Desktop/Transcriptome/scRNA_Galaxy/scripts/STARsolo_Log.final.out",
+        "/home/akabetso/Desktop/Transcriptome/scRNA_Galaxy/scripts/STARsolo_Log.out",
+        "/home/akabetso/Desktop/Transcriptome/scRNA_Galaxy/scripts/STARsolo_Log.progress.out"
+    ],
+    "config_analysis_dir": [
+        "STARsolo_Log.final.out",
+        "STARsolo_Log.out",
+        "STARsolo_Log.progress.out"
+    ],
+    "config_creation_date": "2024-09-24, 16:00 CEST",
+    "config_git_hash": null,
+    "config_intro_text": null,
+    "config_report_comment": null,
+    "config_report_header_info": null,
+    "config_script_path": "/home/akabetso/miniconda3/envs/myenv/lib/python3.9/site-packages/multiqc",
+    "config_short_version": "1.24.1",
+    "config_subtitle": null,
+    "config_title": null,
+    "config_version": "1.24.1",
+    "config_output_dir": "/home/akabetso/Desktop/Transcriptome/scRNA_Galaxy/results/Multi_QC"
+}

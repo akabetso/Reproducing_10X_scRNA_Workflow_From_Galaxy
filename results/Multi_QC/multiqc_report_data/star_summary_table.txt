@@ -1,0 +1,2 @@
+Sample	Total Reads	Aligned	Uniq aligned	Multimapped	Avg. read len	Avg. mapped len	Splices	Annotated splices	GT/AG splices	GC/AG splices	AT/AC splices	Non-canonical splices	Mismatch rate	Del rate	Del len	Ins rate	Ins len
+STARsolo	7.685924999999999	96.25	88.49	0.596795	91.0	89.31	1.081061	1.0596539999999999	1.0698269999999999	0.003208	0.00017199999999999998	0.007854	0.47	0.01	1.55	0.02	1.38
