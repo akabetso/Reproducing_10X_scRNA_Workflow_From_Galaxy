@@ -32,7 +32,7 @@ sce <- SingleCellExperiment(
 
 head(sce)
 # Apply the emptyDrops method
-e.out <- emptyDrops(counts(sce), lower = 100)
+e.out <- emptyDrops(counts(sce), lower = 300)
 
 # Check if the output has FDR values and filter cells
 if ("FDR" %in% colnames(e.out)) {
@@ -51,17 +51,20 @@ head(sce_filtered)
 # Check the dimensions of the filtered matrix
 dim(sce_filtered)
 
-# Save the filtered matrix in 10X format
+# Create filtered barcodes and genes data frames
+filtered_barcodes <- colData(sce_filtered)$cell_barcodes
+filtered_genes <- rowData(sce_filtered)
+
+# Save the filtered matrix in 10X format, with matching barcodes and features
 write10xCounts(
   path = results_dir, 
   x = counts(sce_filtered), 
   gene.id = rownames(sce_filtered),
-  gene.symbol = rowData(sce_filtered)$gene_symbol,
-  barcodes = colData(sce_filtered)$cell_barcodes,
+  gene.symbol = filtered_genes$gene_symbol,
+  barcodes = filtered_barcodes,
   version = "3",
   overwrite = TRUE
 )
-
 ####################
 #matrix_check <- "../results/DropletUtils/matrix.mtx"
 
