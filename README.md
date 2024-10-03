@@ -57,9 +57,11 @@ To proceed with downstream analysis, we need to understand the chemistry version
 
 [STARsolo](https://github.com/alexdobin/STAR/blob/master/docs/STARsolo.md) downloadable from [GitHub](https://github.com/alexdobin/STAR/releases)
 
-[DropletUtils](chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/https://bioconductor.org/packages/release/bioc/manuals/DropletUtils/man/DropletUtils.pdf) downladable with the BiocManager package [(BiocManager::install("DropletUtils"))](https://bioconductor.org/packages/release/bioc/html/DropletUtils.html)
+[DropletUtils](https://bioconductor.org/packages/release/bioc/html/DropletUtils.html) downladable with the BiocManager package [(BiocManager::install("DropletUtils"))](https://bioconductor.org/packages/release/bioc/html/DropletUtils.html)
 
 [MultiQC](https://multiqc.info/) downloaded via [pip or conda install multiqc](https://docs.seqera.io/multiqc/getting_started/installation)
+
+[Scanpy](https://scanpy.readthedocs.io/en/stable/tutorials/index.html) [downloadable](https://scanpy.readthedocs.io/en/stable/installation.html) via pip or conda install.
 
 ### Method
 
@@ -67,11 +69,35 @@ To proceed with downstream analysis, we need to understand the chemistry version
 
 Cell Ranger is the ininitial pipeline for processing 10x Genomics outputs, this process is known to be complex and computationally expensive. to subconvent this, [STARsolo](https://github.com/alexdobin/STAR/blob/master/docs/STARsolo.md) has proven to be a drop-in solution to the Cell Ranger pipeline to demultiplex and allign 10X Genomics output and produce a counts matrix ready for post pre-processing.
 
+**Indexing the reference genome:** By Indexing the reads with STAR, it creates a compacted genome to git into the memory during aligment, STAR quicly find the best alignment positions for each read reducing search space and improving speed. The introduction od GTF file during indexing also accounts for known splice junctions during alignment, which is particularly important when reads span exon-exon junctions. 
+
 **Demultiplexing and Quantification:** The STARsolo parse the parameters for demultiplexing, mapping and quantifying both sets of reads using chemistry version 3 as contained in the dataset. I had previously indexed the whole human genome making it easier to load in the memory. In this process STARsolo requires the 10X Genomics barcodes Whitelist to perform the demultiplexing assigning each reads to it's respective sample. The files are loaded respecting the other describes in the documentation of STARsolo with filtering option deactivated as we will muanually deactivate them downstream for more controlability. At the end of this process, a 5 files are generated including a log file, mapping quality file, and 3 counts matrix files. The bam allignment files were turned off.
 
 **Quality Control with MultiQC**  was then used to assess these files and generate a nice quality report describing the quality of the data.
 
 **Producing a Quality Count Matrix:** STARsolo produced a bundled matrix format seperating genes vs cells information in seperate files. At this stage, the number of cells are over-represented as they have not yet been filtered for high quality cells. So, we use DropletUtils to produce a filtered dataset that is more representative of the Cell Ranger pipeline. The STARsolo bundle matrix is inserted in the DropletUtils pipeline defining the number of cells expected in our sample (3000) with an upper quantile of 0.99 which is the threshold for retaining high confidence cell barcodes by foccussing on barcodes that are in the 99th percentile of UMI counts. This helps to elude the majority of background noise or empty droplets with low counts. We later ploted the barcode rank plot whigh shows the log of total UMI count and their ranks. 
+
+**Quality control with Scanpy:** The first upstream analysis of Scanpy is to observe the cell size (the total sum of counts accross all genes for each cells), the number of reads mapped to gene in the mitochondrial genome and the number of expressed genes (number of genes with non-zero counts for each cells). Low quality cells may be due do a variety of causes ranging from cell damage during dissociation to failure in library preparation. Usually they may have low total counts, few expressed genes and high mitochodrial or spike-in proportions. We create a new column and assign True or False for each genes mapped to mitochondrial gene or not respectively. We then create a violin and a sctter plot accross the data mentioned here.
+
+**Filtering of low-quality cells** I now proceed to filter for low-quality cells based on the 3 previous metrics generated above (cell size, number of expressed genes and the proportions of genes mapped to mitochondrial genes). I cut-off genes less than 200 and above 2500 as descrived in the Violin plot. I equally cut-off percentage of reads mapped to mitochondrial genes above 5%.
+
+**Normalization and scaling** Generally in scRNA-Seq, cells may show variations in the number of reads or coverage not because of biological differences but due to technical issues like cDNA capture whcih varies between cells and PCR amplification efficiency which varies equally accross cells. After removing low quality cells, normalization of the counts removes theses differences to avoid that they  interfere with comparisons of the expression profiles between cells.
+
+Scalling normalization is the simplest and most commonly used class of normalization strategies, each cell counts is divided by a cell specific scaling factor (size factor). The assumption is that any technical biases tend to affect genes in a similar manner. While each cell may have a relative biases represented by the size factor for that cell. Dividing the cell counts by its size factor should then remove the bias. scale normalization is transformed such that the size factor accross all cells is equal to 1. The normalized expression are then kept on the scale as the original counts. Here we normalize such that each cell have 10000 reads and creare a new column called norm to contain the normalization.
+
+**Selection of features** Selecting the most variable genes based on their expression accross the cells (genes highly expressed in one cell and low in other) is the simplest approach for featur selection. We asume that the variation in some genes compared to other genes are genuine biological differences and not technical noise. With clustering and dimensionality reduction, cells are compared based on their gene expression profiles. 
+
+The simplest approach to quantify per gene variation is computing the variance of the log-normalized expression values for each gene accross all cells. So we quantified the per gene variation and selected the subset of highly variable genes that we will used downstream analysis to ensure that the quantitative heterogeneity is consistent through-out the anlysis. The seurat method is efficient for computing gene variability, we used a minimum threshold between variable and non variable genes and a normalized dispsersion cutt-off to set a lower limit on the normalized dispersion. only genes with dispersion above this threshold are retiained because the show sufficient variability across cells.
+
+**Scaling the data** We need to apply a linear transformation or scaling before demensional reduction. This is done by regressing out the unwanted sources of variation in the todal counts per cell and the percentage of mitochondrial genes expressed. In order to give equal wight in downstream analysis and ensure that highly-expressed genes do not dominate, we ensure the variance accross cells is 1 and the mean expression is 0.
+
+**Dimension reduction and PCA:** Here we aim to identify similar transcriptomic profiles, with each gene represnts a dimension of the data. We make a 2-dimensional plot where each point is cell and each axis is the expression of one gene. PCA is a nice dimensional reduction technique consisting in the identification of axis in high dimensional space that captue the larges amound of variation. We plot PCA with 50 PCs (50 PCs represents a robust compression of the dataset)
+
+**Clustering Cells** Firstly, we determine the number of PCs (dataset compression). A simple method for choosing the number of PCs is to generate an elbow plot ranking the PCs based on the percentage of variance permiting to choose PCs that follow a more linear curve. We proceed in defining the cell population observed int he PCA plot. To do this, we firtst compute the neigborhood graph (to determine neigborhood with similar expression pattern with higher weigths to cells that are similarly related) and then clustering at the end.
+
+**Finding marker genes:** Here we thrive to find genes that drive the seperation between clusters which can then be used to give sense or meaning to the cell populations.  Marker genes are usually detected by their differential expression between clusters, more strong Differential genes might have droven seperate clustering of cells. We used t-test and the wilcoxon statistical test to rank marker genes. We equally used the louvain algoritm to cluster cells, so the statistical test will rank genes that differentiate this clusters. For each group, we return 100 genes ranked by how well they characterize the cluster compared to other clusters. And finally, we applied the Benjamini-Hochberg correction method to adjust the p-value and control false discovery rate.
+
+And the last step was visualizing the expression of the marker genes and annotating the cell sub-populations.
 
 
 ### Results
