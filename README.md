@@ -41,7 +41,7 @@ Data analysis involves several steps: alignment of sequencing fragments, quality
 
 #### Dataset
 
-10X Genomics provided a 1K PBMCs from a healthy donor (v3 chemistry) which consist of 1000 peripheral blood mononuclear cells extracted from healthy donor. The [Zenodo](https://zenodo.org/records/3457880) linke of the source file provided in Galaxy contained 6 FASTQ files sequenced in two lanes each contain a forward and reverse read. The forward reads contains the barcodes with UMIs embeded into each and the reverse read contains the cDNA sequences.
+[10X Genomics](https://www.10xgenomics.com/platforms/xenium?utm_medium=search&utm_source=google&utm_content=website-page&utm_campaign=7011P000001Pw8ZQAS&gad_source=1) provided a 1K PBMCs from a healthy donor (v3 chemistry) which consist of 1000 peripheral blood mononuclear cells extracted from healthy donor. The [Zenodo](https://zenodo.org/records/3457880) link of the source file provided in Galaxy contained 6 FASTQ files sequenced in two lanes each contain a forward and reverse read. The forward reads contains the barcodes with UMIs embeded into each and the reverse read contains the cDNA sequences.
 
 To proceed with downstream analysis, we need to understand the chemistry version used in the 10X Genomics pipeline. While STARsolo can can detect version used, it it important to describe the barcode length used in during demultiplexing based on the chemistry verions used in devoloping the dataset.
 
@@ -54,6 +54,8 @@ To proceed with downstream analysis, we need to understand the chemistry version
 [Ensemble](https://www.ensembl.org/Homo_sapiens/Info/Index) for downloading the fasta file of reference genome ([Genome assembly: GRCh38.p14 (GCA_000001405.29)](https://ftp.ensembl.org/pub/release-112/fasta/homo_sapiens/dna/)) and the genome annotation file ([GRCh38.112](https://ftp.ensembl.org/pub/release-112/gtf/homo_sapiens/))
 
 #### Tools
+
+[STAR](https://github.com/alexdobin/STAR)
 
 [STARsolo](https://github.com/alexdobin/STAR/blob/master/docs/STARsolo.md) downloadable from [GitHub](https://github.com/alexdobin/STAR/releases)
 
