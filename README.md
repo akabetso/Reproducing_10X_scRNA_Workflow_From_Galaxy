@@ -143,4 +143,6 @@ Figure 6: UMAP1 clustering.
 
 Figure 7&8: t-test and wilcoxon top 5 ranked marker genes
 
-According tho the t-test statistical differentiator, CST3 is the marker gene for cluster 1, 4 and 6 while NKG& for cluster 3 and 5 as well as PPBP for cluster 7 all as accurate as prevously guessed. For Wilcoxon statistics the same pattern for marker genes are main as defined by t-test method. some genes happen to permuted in rank but the top marker genes remain unchanged.
+According tho the t-test statistical differentiator, CST3 is the marker gene for cluster 1, 4 and 6 while NKG& for cluster 3 and 5 as well as PPBP for cluster 7 all as accurate as prevously guessed. For Wilcoxon statistics the same pattern for marker genes are main as defined by t-test method. some genes happen to permuted in rank but the top marker genes remain unchanged. 
+
+**Comparing Differentially differerntial genes of Interest:**
