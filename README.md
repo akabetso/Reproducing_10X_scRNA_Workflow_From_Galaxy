@@ -4,6 +4,8 @@
 
 ## *Udated on the 01st of Ocober 2024*
 
+I reproduced the scRNA-Seq analysis pipeline from Galaxy here in a linux envirionment. my reasons being to extend my knowledge in scRNA-Seq pipelines, to have a deep understanding of the tools being used and and the reasons for each choise and to continue to improve my expertise in the Linux environment. I would love to hear back from you and will greatly appreciate your feedback on my approach or any further insights.
+
 ## Workflow
 
  - Introduction

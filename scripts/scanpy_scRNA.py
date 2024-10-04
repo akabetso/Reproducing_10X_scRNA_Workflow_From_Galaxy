@@ -129,7 +129,7 @@ sc.settings.verbosity = 2  # reduce the verbosity
 sc.pl.rank_genes_groups(adata, n_genes=20, ncols=3, sharey=True, save = "_t_test.png", show=False)
 # List and compare top 5 elements of the ranked genes
 marker_genes = pd.DataFrame(adata.uns["rank_genes_groups"]["names"]).head(5)
-fig, ax = plt.subplots(figsize=(8, 4))
+fig, ax = plt.subplots(figsize=(6, 1))
 ax.axis("tight")
 ax.axis("off")
 table = ax.table(cellText = marker_genes.values, colLabels = marker_genes.columns, cellLoc = "center", loc = "center")
@@ -149,7 +149,7 @@ sc.tl.rank_genes_groups(adata, groupby='louvain', use_raw=True, method='wilcoxon
 sc.pl.rank_genes_groups(adata, n_genes=20, ncols=3, sharey=True, save = "_wilcoxon.png", show=False)
 # List and compare top 5 elements of the wilcoon ranked genes
 marker_genes = pd.DataFrame(adata.uns["rank_genes_groups"]["names"]).head(5)
-fig, ax = plt.subplots(figsize=(8, 4))
+fig, ax = plt.subplots(figsize=(5, 1))
 ax.axis("tight")
 ax.axis("off")
 table = ax.table(cellText = marker_genes.values, colLabels = marker_genes.columns, cellLoc = "center", loc = "center")
@@ -161,12 +161,12 @@ adata.write("_umap_clustering_wilcoxon.h5ad") # Write current state to h5ad file
 
 # Compare different expresion level of define genes accross cells
 sc.pl.violin(adata, keys=['CST3', 'NKG7', 'PPBP'], groupby='louvain', use_raw=True, save = "_expresion_level.png", show = False)
-marker_genes = ['LDHB', 'LYZ', 'CD74', 'CCL5', 'LST1', 'NKG7', 'HLA-DPA1', 'PF4']
+marker_genes = ['LDHB', 'CD74', 'LYZ', 'CCL5', 'LST1', 'NKG7', 'HLA-DPA1', 'PF4']
 sc.pl.stacked_violin(adata, marker_genes, groupby="louvain", figsize = (8, 8), swap_axes = True, stripplot = False, save = "_mkg_expression_level.png", show = False)
 sc.pl.dotplot(adata, marker_genes, groupby="louvain", figsize = ( 10, 6), swap_axes = True, save = "_mkg_expresion_lev.png", show = False)
 # Display the mean expression of the marker genes for the cells on the neighborhood graph
 sc.pl.umap(adata, 
-           color=['louvain', 'LDHB', 'LYZ', 'CD74', 'CCL5', 'LST1', 'NKG7', 'HLA-DPA1', 'PF4'], 
+           color=['louvain', 'LDHB', 'CD74', 'LYZ', 'CCL5', 'LST1', 'NKG7', 'HLA-DPA1', 'PF4'], 
            use_raw=True, 
            ncols=3, save = "_mkg_expression_lev.png", show = False)  # Number of panels per row
 # We can equally display the top 20 marker genes in different cells using heatmap
@@ -201,9 +201,12 @@ plt.close()
 # Perform cell type annotation or annotating each cluster
 # Define the mapping of old categories to new categories
 old_categories = adata.obs['louvain'].unique()
-new_categories = ['CD4+ T', 'CD14+', 'B', 'CD8+ T', 'FCGR3A+', 'NK', 'Dendritic', 'Megakaryocytes']
+print(old_categories)
+#new_categories = [0, 1, 2, 3, 4, 5, 6, 7]
+new_categories = ['CD4+ T', 'B', 'CD14+', 'NK', 'CD8+ T', 'FCGR3A+',  'Dendritic', 'Megakaryocytes']
 # Create a mapping dictionary
 category_mapping = {old: new for old, new in zip(old_categories, new_categories)}
+print(category_mapping)
 # Rename categories in the observation annotation
 adata.obs['louvain'] = adata.obs['louvain'].map(category_mapping)
 # Visualize cluster annotation with umap
