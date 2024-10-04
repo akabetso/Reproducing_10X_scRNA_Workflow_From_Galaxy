@@ -113,7 +113,6 @@ Figure2: QC metrics
 According to figure 3 (righ), there's a strong correlation between the cell size and the number of genes expressed which is importand to understand the quality and consistency of our dataset. cells with more reads tend to have more genes expressed (more reads means more genes can be identified) but if a cell has more reads and lesser genes it might call for attention of poor cell quality or technical issues. Figure 3 (left) shows that, cells with higher propertion mitochondrial genes are not cells with many expressed genes. higher percentage > 5% have fewer genes for exemple. 5% turns to be a good threshold to cut of genes with low counts. Also, low expressed genes may show low quality cells, so in our casse we see we have almost no expression below 200, so we can eliminate this cells and alos cells above 2500 equally.
 
 ![Figure_3](results/scanpy/scatterplot_mt_genes_total_counts.png)
-
 Figure 3. Observing QC metrics with scatter plot
 
 **Highly variable genes** It's is important to detect highly variable genes (HGV) as they are useful for downstream analysis. HVG are key drivers of biological diversity, they help distinguish between different cell types or states. 
@@ -127,7 +126,6 @@ Figure 4: Highly variable genes.
 **Dimensionality reduction** Here we use PCA capture the largest amount of variation. In PCA, the first axis or PC captures the greates variance accross cells and the nect PC should be orthogonal to the first and capture the greatest left over variation. Figure 5 uses 3 PC to capture all variation (PC1 vs PC2 and PC2 vs PC3) using one of the highly ranked marger genes CST3. We can as well project the PCs for other genes ot observe their variations. For CST3, the differences are mostly projected on PC1 because SCT3 is the top gene for PC1 but not visible on the PC2 vs PC3.
 
 ![Fifure_5](results/scanpy/PCA_plot.png)
-
 Figure 5: PCA plot
 
 **Clustering** Before proceeding to clustering, It's important to consider the number of PCs to keep. more PCs means more noise but also more biological signal. According to our elbow plot (not represented here but fount in the [results directory](https://github.com/akabetso/Reproducing_10X_scRNA_Workflow_From_Galaxy/blob/master/results/scanpy/pca_variance_ratioelbow_plot.png)) a PC of 10 presents a just selection to limit noise but have more biological variations.
@@ -138,4 +136,11 @@ So after calculating the neighborhood and aplying the louvain algorithm, we iden
 
 Figure 6: UMAP1 clustering.
 
-**Gene markers**
+**Gene markers** Here, the main goal is to identify the genes that drives seperation between clusters. We use them to identify each cluster based on their functional annotation. t-test and the wilcoxon statistical methods provides the differential expression of the marker genes between the clusters. The 20 top ranked gene per cluster are presented. We present in figure 7&8 the snipset of the top 5 genes per cluster for both t-test and the wilcoxon sum-test to compare the effiency of the marker genes ranked or selected.
+
+![Figure_7](results/scanpy/t_test_ranked_genes_accross_cells.png)
+![Figure_7](results/scanpy/wilcoxon_ranked_genes_accross_cells.png)
+
+Figure 7&8: t-test and wilcoxon top 5 ranked marker genes
+
+According tho the t-test statistical differentiator, CST3 is the marker gene for cluster 1, 4 and 6 while NKG& for cluster 3 and 5 as well as PPBP for cluster 7 all as accurate as prevously guessed. For Wilcoxon statistics the same pattern for marker genes are main as defined by t-test method. some genes happen to permuted in rank but the top marker genes remain unchanged.
