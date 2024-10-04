@@ -104,4 +104,38 @@ And the last step was visualizing the expression of the marker genes and annotat
 
 ### Results
 
-### Conclusion
+**QC metrics:** We began by examining the distributions of the 3 QC metrics. According to figure 2, for the cell size (total counts), most of the values are between 1000 and 4000 reads. The number of expressed genes (n_genes_by_counts) are mostly between 500 and 1200 genes. for both we have a few cells with high value distribitions. The distribution of the proportions of reads mapped to mitochondrial genes (pct_counts_mt) is even more narrower, not all reads have been mapped to mitochondrial genes. Most cells mapped to mitochondrial reads fall within a small range between 0 and 5%. A few cells show higher percentage, Mitonchondrial genes represent a small fraction of the transcriptome in healthy cells so, when the fraction is higher, it might be sressed or death cells being expressed or noise.
+
+![figre2](results/scanpy/violinviolin_qc_plot.png)
+
+Figure2: QC metrics
+
+According to figure 3 (righ), there's a strong correlation between the cell size and the number of genes expressed which is importand to understand the quality and consistency of our dataset. cells with more reads tend to have more genes expressed (more reads means more genes can be identified) but if a cell has more reads and lesser genes it might call for attention of poor cell quality or technical issues. Figure 3 (left) shows that, cells with higher propertion mitochondrial genes are not cells with many expressed genes. higher percentage > 5% have fewer genes for exemple. 5% turns to be a good threshold to cut of genes with low counts. Also, low expressed genes may show low quality cells, so in our casse we see we have almost no expression below 200, so we can eliminate this cells and alos cells above 2500 equally.
+
+![Figure_3](results/scanpy/scatterplot_mt_genes_total_counts.png)
+
+Figure 3. Observing QC metrics with scatter plot
+
+**Highly variable genes** It's is important to detect highly variable genes (HGV) as they are useful for downstream analysis. HVG are key drivers of biological diversity, they help distinguish between different cell types or states. 
+
+Figure 4 (left) shos that after normalization, there is less variability in gene dispersion accross celss for the less variable genes while highly variable genes are more clearly seperated. overall, the normalization shows that the technical variations have been reduced and biological signal is more prominent while for figure 4 (rigth), the plot hasn't be normalized and dispersion are higher and more scattered, especially for genes with low mean expression. there seems to be more noise which may mask biological insight. many genes aprearing to be variable may not be because they might be driven by noise.
+
+![Figure_4](results/scanpy/highly_variable_genes.png)
+
+Figure 4: Highly variable genes.
+
+**Dimensionality reduction** Here we use PCA capture the largest amount of variation. In PCA, the first axis or PC captures the greates variance accross cells and the nect PC should be orthogonal to the first and capture the greatest left over variation. Figure 5 uses 3 PC to capture all variation (PC1 vs PC2 and PC2 vs PC3) using one of the highly ranked marger genes CST3. We can as well project the PCs for other genes ot observe their variations. For CST3, the differences are mostly projected on PC1 because SCT3 is the top gene for PC1 but not visible on the PC2 vs PC3.
+
+![Fifure_5](results/scanpy/PCA_plot.png)
+
+Figure 5: PCA plot
+
+**Clustering** Before proceeding to clustering, It's important to consider the number of PCs to keep. more PCs means more noise but also more biological signal. According to our elbow plot (not represented here but fount in the [results directory](https://github.com/akabetso/Reproducing_10X_scRNA_Workflow_From_Galaxy/blob/master/results/scanpy/pca_variance_ratioelbow_plot.png)) a PC of 10 presents a just selection to limit noise but have more biological variations.
+
+So after calculating the neighborhood and aplying the louvain algorithm, we identified 8 clusters, CST3 is highly variable in cluster 1, 4, 6 and 7. while NkG7 is more highly in 3 and 6 as well as PPBP highly variable in 7.
+
+![Figure_6](results/scanpy/umap_louvain_clustering.png)
+
+Figure 6: UMAP1 clustering.
+
+**Gene markers**
