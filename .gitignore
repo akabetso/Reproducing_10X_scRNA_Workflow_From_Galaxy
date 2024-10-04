@@ -7,5 +7,5 @@
 /scripts/_umap_clustering_t_test.h5ad
 /scripts/_umap_clustering_wilcoxon.h5ad
 /results/DropletUtils/matrix.mtx
-
+/results/DropletUtils/
 
